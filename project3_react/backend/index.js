@@ -6,11 +6,8 @@ const dbManager = require("./managerBackend")
 const app = express()
 const PORT = 3000
 
-// Add process hook to shutdown pool
-process.on('SIGINT', function() {
-  pool.end();
-  console.log('Application successfully shutdown');
-  process.exit(0);
+app.listen(PORT, () => {
+  console.log("server has started on port", PORT);
 });
 
 var corsOptions = {
@@ -25,8 +22,6 @@ app.use(
   })
 )
 
-app.get('/MenuItems', dbManager.viewMenuItems)
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+// Routes for Menu Items
+app.get('/menuItems', dbManager.viewMenuItems)
+app.post('/menuItems/insert', dbManager.insertMenuItem)

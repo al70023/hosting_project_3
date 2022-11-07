@@ -26,24 +26,34 @@ function MenuItems() {
 
     return(
         <div className = "menuItems">
-            <h1>
-                Menu Items
-            </h1>
+            <h1> Menu Items </h1>
 
-            <table>
-                <thead>
-                    <tr>
-                        {/* Table Column Headers */}
-                        <th className="idCol">Item ID</th>
-                        <th>Item Name</th> 
-                        <th>Item Price</th>
-                        <th>Item Category</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
+
+            <div className = "menuItemTable">
+                <form>
+                <table>
+                    <thead>
+                        <tr>
+                            {/* Table Column Headers */}
+                            <th className="idCol">ID</th>
+                            <th>Name</th> 
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                </form>
+                        
+                
+
+            </div>
+        
+
+            
         </div>
     );
 
