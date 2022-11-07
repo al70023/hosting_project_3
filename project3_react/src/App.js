@@ -31,6 +31,8 @@ import ServerHome from './ServerHome';
 import ManagerHome from './ManagerHome';
 import CustomerHome from './CustomerHome';
 import Nav from './Nav';
+import MenuItems from './MenuItems';
+
 
 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
@@ -45,6 +47,7 @@ function App() {
             <Route exact path="/ManagerHome" element={<ManagerHome />} />
             <Route exact path="/ServerHome" element={<ServerHome />} />
             <Route exact path="/CustomerHome" element={<CustomerHome />} />
+            <Route exact path="/MenuItems" element={<MenuItems />} />
           </Routes>
         </div>
       </Router>
