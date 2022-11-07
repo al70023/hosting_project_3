@@ -1,9 +1,6 @@
-const express = require('express');
 const { Pool } = require('pg');
 const dotenv = require('dotenv').config();
-// Create express app
-const app = express();
-const port = 3000;
+
 // Create pool
 const pool = new Pool({
     user: process.env.PSQL_USER,
@@ -43,5 +40,6 @@ const insertMenuItem = (req, res) => {
 
 module.exports = {
     viewMenuItems,
-    insertMenuItem
+    insertMenuItem,
+    pool
 } 

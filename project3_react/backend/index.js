@@ -2,9 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require("cors");
 const dbServer = require("./serverBackend")
-const dbManager = require("./managerBackend")
+const dbManager = require("./managerBackend");
+const { Pool } = require('pg/lib');
 const app = express()
-const PORT = 3000
+const PORT = 3001
 
 app.listen(PORT, () => {
   console.log("server has started on port", PORT);
@@ -23,5 +24,5 @@ app.use(
 )
 
 // Routes for Menu Items
-app.get('/menuItems', dbManager.viewMenuItems)
-app.post('/menuItems/insert', dbManager.insertMenuItem)
+app.get('/MenuItems', dbManager.viewMenuItems)
+//app.post('/menuItems/insert', dbManager.insertMenuItem)

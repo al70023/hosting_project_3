@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState, useEffect, Fragment } from 'react';
+import './MenuItems.css';
 
 function MenuItems() {
     // Data state variable defaulted to an empty array (for printing out the data)
-    const [menuItemData, setMenuItemsData] = useState([]);
+    const [menuItemsData, setMenuItemsData] = useState([]);
 
     // Data state variable for the data from the add menu item form
     const [addFormData, setAddFormData] = useState({
@@ -13,10 +14,12 @@ function MenuItems() {
         item_category: '',
     })
 
+    const [editMenuItemID, setEditMenuItemID] = useState(null);
+
     const fetchMenuItems = () => {
-        fetch('http://localhost:3000/MenuItems')
-            .then(res => res.json())
-            .then(json => setMenuItemsData(json))
+        fetch('http://localhost:3001/MenuItems')
+        .then(res => res.json())
+        .then(json => setMenuItemsData(json))
     }
     
     // Call the function on the component mount
@@ -24,6 +27,7 @@ function MenuItems() {
         fetchMenuItems();
     }, []);
 
+    console.log(menuItemsData);
     return(
         <div className = "menuItems">
             <h1> Menu Items </h1>
@@ -43,7 +47,15 @@ function MenuItems() {
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        {menuItemsData.map((menuItem) => (
+                            <tr>
+                                <td>{menuItem.item_id}</td>
+                                <td>{menuItem.item_name}</td>
+                                <td>{menuItem.item_price}</td>
+                                <td>{menuItem.item_category}</td>
+
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 </form>
