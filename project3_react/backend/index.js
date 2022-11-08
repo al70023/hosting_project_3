@@ -32,3 +32,6 @@ app.get('/MenuItems', dbManager.viewMenuItems)
 
 // Routes for Server GUI
 app.get('/EntreeItems', dbServer.viewEntreeItems)
+app.get('/SideItems', dbServer.viewSideItems)
+app.get('/DrinkItems', dbServer.viewDrinkItems)
+app.get('/DessertItems', dbServer.viewDessertItems)

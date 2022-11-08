@@ -26,7 +26,40 @@ const viewEntreeItems = (req, res) => {
     })
 }
 
+const viewSideItems = (req, res) => {
+    // SQL query to get equipment, order by ascending order of equipment ID
+    pool.query("SELECT * from menu_items where item_category='side';", (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+const viewDrinkItems = (req, res) => {
+    // SQL query to get equipment, order by ascending order of equipment ID
+    pool.query("SELECT * from menu_items where item_category='drink';", (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+const viewDessertItems = (req, res) => {
+    // SQL query to get equipment, order by ascending order of equipment ID
+    pool.query("SELECT * from menu_items where item_category='dessert';", (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
 module.exports = {
     viewEntreeItems,
+    viewSideItems,
+    viewDrinkItems,
+    viewDessertItems,
     pool
 } 

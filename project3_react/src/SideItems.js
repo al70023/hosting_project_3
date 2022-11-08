@@ -1,37 +1,37 @@
 import React from 'react';
 import { useState, useEffect, Fragment } from 'react';
-import './EntreeItems.css';
+import './SideItems.css';
 
-function EntreeItems() {
+function SideItems() {
     // Data state variable defaulted to an empty array (for printing out the data)
-    const [entreeItemsData, setEntreeItemsData] = useState([]);
+    const [sideItemsData, setSideItemsData] = useState([]);
 
-    // Data state variable for the data from the add entree item form
+    // Data state variable for the data from the add side item form
     const [addFormData, setAddFormData] = useState({
         item_name: '',
         item_price: '',
     })
 
-    const [editEntreeItemID, setEditEntreeItemID] = useState(null);
+    const [editSideItemID, setEditSideItemID] = useState(null);
 
-    const fetchEntreeItems = () => {
-        fetch('http://localhost:3001/EntreeItems')
+    const fetchSideItems = () => {
+        fetch('http://localhost:3001/SideItems')
         .then(res => res.json())
-        .then(json => setEntreeItemsData(json))
+        .then(json => setSideItemsData(json))
     }
     
     // Call the function on the component mount
     useEffect(() => {
-        fetchEntreeItems();
+        fetchSideItems();
     }, []);
 
-    console.log(entreeItemsData);
+    console.log(sideItemsData);
     return(
-        <div className = "entreeItems">
-            <h1> Entree Items </h1>
+        <div className = "sideItems">
+            <h1> Side Items </h1>
 
 
-            <div className = "entreeItemTable">
+            <div className = "sideItemTable">
                 <form>
                 <table>
                     <thead>
@@ -42,10 +42,10 @@ function EntreeItems() {
                         </tr>
                     </thead>
                     <tbody>
-                        {entreeItemsData.map((entreeItem) => (
+                        {sideItemsData.map((sideItem) => (
                             <tr>
-                                <td>{entreeItem.item_name}</td>
-                                <td>{entreeItem.item_price}</td>
+                                <td>{sideItem.item_name}</td>
+                                <td>{sideItem.item_price}</td>
 
                             </tr>
                         ))}
@@ -64,4 +64,4 @@ function EntreeItems() {
 
 }
 
-export default EntreeItems;
+export default SideItems;

@@ -33,6 +33,9 @@ import CustomerHome from './CustomerHome';
 import Nav from './Nav';
 import MenuItems from './MenuItems';
 import EntreeItems from './EntreeItems';
+import SideItems from "./SideItems";
+import DrinkItems from "./DrinkItems";
+import DessertItems from "./DessertItems";
 
 
 
@@ -50,6 +53,9 @@ function App() {
             <Route exact path="/CustomerHome" element={<CustomerHome />} />
             <Route exact path="/MenuItems" element={<MenuItems />} />
             <Route exact path="/EntreeItems" element={<EntreeItems />} />
+            <Route exact path="/SideItems" element={<SideItems />} />
+            <Route exact path="/DrinkItems" element={<DrinkItems />} />
+            <Route exact path="/DessertItems" element={<DessertItems />} />
           </Routes>
         </div>
       </Router>
