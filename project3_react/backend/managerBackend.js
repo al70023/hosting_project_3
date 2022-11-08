@@ -11,11 +11,8 @@ const pool = new Pool({
     ssl: {rejectUnauthorized: false}
 });
 
-
-// Get all the equipment in the table
 const viewMenuItems = (req, res) => {
-    // SQL query to get equipment, order by ascending order of equipment ID
-    pool.query('SELECT * FROM menu_items', (error, results) => {
+    pool.query('SELECT * FROM menu_items ORDER BY item_id', (error, results) => {
         if (error) {
             throw error
         }
@@ -26,9 +23,20 @@ const viewMenuItems = (req, res) => {
 const insertMenuItem = (req, res) => {
     const {item_name, item_price, item_category} = req.body
 
-    // SQL query to create a new menu item and add it to the table
     pool.query('INSERT INTO menu_items (item_name, item_price, item_category) VALUES($1, $2, $3)', 
     [item_name, item_price, item_category], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+}
+
+
+const updateMenuItem = (req, res) => {
+    const {item_id, item_name, item_price, item_category} = req.body
+
+    pool.query('UPDATE menu_items SET item_name=$1, item_price=$2, item_category=$3 WHERE item_id = $4', 
+    [item_name, item_price, item_category, item_id], (error, results) => {
         if (error) {
             throw error
         }
@@ -40,5 +48,6 @@ const insertMenuItem = (req, res) => {
 module.exports = {
     viewMenuItems,
     insertMenuItem,
+    updateMenuItem,
     pool
 } 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect, Fragment } from 'react';
-
+import MenuItemReadOnlyRow from './menuItemComponents/MenuItemReadOnlyRow';
+import MenuItemEditableRow from './menuItemComponents/MenuItemEditableRow';
 import './MenuItems.css';
 
 function MenuItems() {
@@ -57,12 +58,78 @@ function MenuItems() {
     }
 
 
+    //EDITING A MENU ITEM
+    // New form to update the equipment row
+    const [editFormData, setEditFormData] = useState({
+        item_id:'',
+        item_name: '',
+        item_price: '',
+        item_category: '',
+    })    
 
-
-    
-
+    // Allows for edited menu item to be updated live
     const [editMenuItemID, setEditMenuItemID] = useState(null);
 
+    // Handles when the user edits/updates a piece of equipment
+    const handleEditFormChange = (event) => {
+        event.preventDefault();
+
+        // Will get the name attribute for each of the inputs in the form and assign it to fieldName
+        const fieldName = event.target.getAttribute('name');
+
+        // Will get the actual value that the user inputted
+        const fieldValue = event.target.value;
+
+        // Make a copy of the form data
+        const newFormData = {... editFormData};
+        newFormData[fieldName] = fieldValue;
+
+        setEditFormData(newFormData);
+    }
+
+    // Takes in menu item as a parameter so that we can save the specific row id for that item
+    const handleEditClick = (event, menuItem) => {
+        event.preventDefault();
+        setEditMenuItemID(menuItem.item_id);
+
+        // Gets the new form values for a piece of edited item
+        const formValues = {
+            item_name: menuItem.item_name,
+            item_price: menuItem.item_price,
+            item_category: menuItem.item_category
+        }
+
+        setEditFormData(formValues);
+    }
+
+    const handleEditFormSubmit = (event) => {
+        event.preventDefault();
+
+        // Assign the values from the form to a new item instance
+        const editedMenuItem = {
+            item_id: editFormData.item_id,
+            item_name: editFormData.item_name,
+            item_price: editFormData.item_price,
+            item_category: editFormData.item_category
+        };
+
+        // Specfifies what kind of request it is
+        const requestOptions = {
+            method: 'POST',             // POST = insert request
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(editedMenuItem)          // body = info for new menu item
+        }
+
+        fetch('http://localhost:3001//menuItems/update', requestOptions)
+            .then(res => res.json())
+            .then(window.location.reload('false'));             //Reload the page with the updated menu item
+    }
+
+
+
+
+
+    // VIEWING ALL MENU ITEMS
     const fetchMenuItems = () => {
         fetch('http://localhost:3001/MenuItems')
         .then(res => res.json())
@@ -109,7 +176,7 @@ function MenuItems() {
                     <button type="submit">Add New Menu Item</button>
                 </form>
 
-                <form>
+                <form onSubmit={handleEditFormSubmit}>
                 <table>
                     <thead>
                         <tr>
@@ -123,13 +190,17 @@ function MenuItems() {
                     </thead>
                     <tbody>
                         {menuItemsData.map((menuItem) => (
-                            <tr>
-                                <td>{menuItem.item_id}</td>
-                                <td>{menuItem.item_name}</td>
-                                <td>{menuItem.item_price}</td>
-                                <td>{menuItem.item_category}</td>
-
-                            </tr>
+                            <Fragment>
+                                {editMenuItemID === menuItem.item_id ? (
+                                    <MenuItemEditableRow
+                                        menuItem={menuItem}
+                                        editFormData={editFormData}
+                                        handleEditFormChange={handleEditFormChange} 
+                                    />
+                                ) : (
+                                    <MenuItemReadOnlyRow menuItem={menuItem} handleEditClick={handleEditClick}/>
+                                )}
+                            </Fragment>
                         ))}
                     </tbody>
                 </table>

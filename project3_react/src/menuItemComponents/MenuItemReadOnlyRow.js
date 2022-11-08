@@ -1,0 +1,17 @@
+import React from 'react'
+
+const MenuItemReadOnlyRow = ({ menuItem, handleEditClick, handleDeleteClick, handleCheckInClick, handleCheckOutClick }) => {
+    return (
+        <tr>
+            <td>{menuItem.item_id}</td>
+            <td>{menuItem.item_name}</td>
+            <td>{menuItem.item_price}</td>
+            <td>{menuItem.item_category}</td>
+            <td>
+                <button type="button" onClick={(event) => handleEditClick(event, menuItem)}>Edit</button>
+            </td>
+        </tr>
+    )
+}
+
+export default MenuItemReadOnlyRow
