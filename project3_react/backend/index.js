@@ -26,3 +26,9 @@ app.use(
 // Routes for Menu Items
 app.get('/MenuItems', dbManager.viewMenuItems)
 //app.post('/menuItems/insert', dbManager.insertMenuItem)
+
+
+
+
+// Routes for Server GUI
+app.get('/EntreeItems', dbServer.viewEntreeItems)

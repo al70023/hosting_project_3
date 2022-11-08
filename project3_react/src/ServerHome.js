@@ -9,6 +9,10 @@ function ServerHome(){
             Server Home
             </h1>
         <p>This is the landing page for servers.</p>
+        <button>Entrees</button>
+        <button>Sides</button>
+        <button>Drinks</button>
+        <button>Desserts</button>
         </div>
     </div>
     );
