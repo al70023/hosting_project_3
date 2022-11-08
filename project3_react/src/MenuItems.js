@@ -27,7 +27,7 @@ function MenuItems() {
         const fieldValue = event.target.value;
 
         // Make a copy of the form data
-        const newFormData = {... addFormData};
+        const newFormData = {...addFormData};
         newFormData[fieldName] = fieldValue;
 
         setAddFormData(newFormData);
@@ -37,7 +37,7 @@ function MenuItems() {
     const handleAddFormSubmit = (event) => {
         event.preventDefault();
 
-        // Assign the values from the form to a new equipment instance
+        // Assign the values from the form to a new menu item instance
         const newMenuItem = {
             item_name: addFormData.item_name,
             item_price: addFormData.item_price,
@@ -59,18 +59,18 @@ function MenuItems() {
 
 
     //EDITING A MENU ITEM
-    // New form to update the equipment row
+    // New form to update the menu item row
     const [editFormData, setEditFormData] = useState({
-        item_id:'',
+        item_id: '',
         item_name: '',
         item_price: '',
-        item_category: '',
+        item_category: ''
     })    
 
     // Allows for edited menu item to be updated live
     const [editMenuItemID, setEditMenuItemID] = useState(null);
 
-    // Handles when the user edits/updates a piece of equipment
+    // Handles when the user edits/updates a menu item
     const handleEditFormChange = (event) => {
         event.preventDefault();
 
@@ -81,7 +81,7 @@ function MenuItems() {
         const fieldValue = event.target.value;
 
         // Make a copy of the form data
-        const newFormData = {... editFormData};
+        const newFormData = {...editFormData};
         newFormData[fieldName] = fieldValue;
 
         setEditFormData(newFormData);
@@ -94,6 +94,7 @@ function MenuItems() {
 
         // Gets the new form values for a piece of edited item
         const formValues = {
+            item_id: menuItem.item_id,
             item_name: menuItem.item_name,
             item_price: menuItem.item_price,
             item_category: menuItem.item_category
@@ -120,7 +121,7 @@ function MenuItems() {
             body: JSON.stringify(editedMenuItem)          // body = info for new menu item
         }
 
-        fetch('http://localhost:3001//menuItems/update', requestOptions)
+        fetch('http://localhost:3001/menuItems/update', requestOptions)
             .then(res => res.json())
             .then(window.location.reload('false'));             //Reload the page with the updated menu item
     }
@@ -141,7 +142,6 @@ function MenuItems() {
         fetchMenuItems();
     }, []);
 
-    console.log(menuItemsData);
     return(
         <div className = "menuItems">
             <h1> Menu Items </h1>
