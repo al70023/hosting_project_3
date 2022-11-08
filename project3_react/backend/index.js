@@ -32,3 +32,6 @@ app.post('/menuItems/insert', dbManager.insertMenuItem)
 
 // Routes for Server GUI
 app.get('/EntreeItems', dbServer.viewEntreeItems)
+app.get('/SideItems', dbServer.viewSideItems)
+app.get('/DrinkItems', dbServer.viewDrinkItems)
+app.get('/DessertItems', dbServer.viewDessertItems)
