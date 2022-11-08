@@ -9,7 +9,7 @@ function Nav(){
         <nav>
             <div>
             <Link activeClassName="active" to={'/'}>
-            <a>Home</a>
+            <a >Home</a>
             </Link>
             </div>  
 
