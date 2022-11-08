@@ -24,15 +24,14 @@ const viewMenuItems = (req, res) => {
 }
 
 const insertMenuItem = (req, res) => {
-    const {name, price, category} = req.body
+    const {item_name, item_price, item_category} = req.body
 
     // SQL query to create a new menu item and add it to the table
     pool.query('INSERT INTO menu_items (item_name, item_price, item_category) VALUES($1, $2, $3)', 
-    [name, price, category], (error, results) => {
+    [item_name, item_price, item_category], (error, results) => {
         if (error) {
             throw error
         }
-        res.status(201).send(`Menu item added with name: ${name}`)
     })
 }
 

@@ -25,7 +25,7 @@ app.use(
 
 // Routes for Menu Items
 app.get('/MenuItems', dbManager.viewMenuItems)
-//app.post('/menuItems/insert', dbManager.insertMenuItem)
+app.post('/menuItems/insert', dbManager.insertMenuItem)
 
 
 
