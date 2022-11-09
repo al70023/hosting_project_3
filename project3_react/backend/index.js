@@ -27,6 +27,7 @@ app.use(
 app.get('/MenuItems', dbManager.viewMenuItems)
 app.post('/menuItems/insert', dbManager.insertMenuItem)
 app.post('/menuItems/update', dbManager.updateMenuItem)
+//app.delete('/menuItems/:id', dbManager.deleteMenuItem)
 
 
 

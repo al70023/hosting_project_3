@@ -58,7 +58,7 @@ function MenuItems() {
     }
 
 
-    //EDITING A MENU ITEM
+    // EDITING A MENU ITEM
     // New form to update the menu item row
     const [editFormData, setEditFormData] = useState({
         item_id: '',
@@ -126,9 +126,21 @@ function MenuItems() {
             .then(window.location.reload('false'));             //Reload the page with the updated menu item
     }
 
+    const handleCancelClick = () => {
+        setEditMenuItemID(null);
+    }
 
+    // DELETING A MENU ITEM
+    const handleDeleteClick = (event, item_id) => {
+        event.preventDefault();
 
-
+        fetch(`http://localhost:3001/menuItems/${item_id}`, { method: 'DELETE' })
+            //.then(window.location.reload(false))
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    
+    }    
 
     // VIEWING ALL MENU ITEMS
     const fetchMenuItems = () => {
@@ -196,9 +208,10 @@ function MenuItems() {
                                         menuItem={menuItem}
                                         editFormData={editFormData}
                                         handleEditFormChange={handleEditFormChange} 
+                                        handleCancelClick={handleCancelClick}
                                     />
                                 ) : (
-                                    <MenuItemReadOnlyRow menuItem={menuItem} handleEditClick={handleEditClick}/>
+                                    <MenuItemReadOnlyRow menuItem={menuItem} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick}/>
                                 )}
                             </Fragment>
                         ))}

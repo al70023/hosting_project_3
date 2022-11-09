@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MenuItemReadOnlyRow = ({ menuItem, handleEditClick, handleDeleteClick, handleCheckInClick, handleCheckOutClick }) => {
+const MenuItemReadOnlyRow = ({ menuItem, handleEditClick, handleDeleteClick }) => {
     return (
         <tr>
             <td>{menuItem.item_id}</td>
@@ -10,6 +10,10 @@ const MenuItemReadOnlyRow = ({ menuItem, handleEditClick, handleDeleteClick, han
             <td>
                 <button type="button" onClick={(event) => handleEditClick(event, menuItem)}>Edit</button>
             </td>
+
+            {/* <td>
+                <button type="button" onClick={(event) => handleDeleteClick(event, menuItem.item_id)}>Delete</button>
+            </td> */}
         </tr>
     )
 }

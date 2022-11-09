@@ -31,7 +31,6 @@ const insertMenuItem = (req, res) => {
     })
 }
 
-
 const updateMenuItem = (req, res) => {
     const {item_id, item_name, item_price, item_category} = req.body
 
@@ -43,11 +42,29 @@ const updateMenuItem = (req, res) => {
     })
 }
 
+const deleteMenuItem = (req, res) => {
+    // const {item_name} = req.body
+
+    // pool.query('DELETE FROM menu_items WHERE item_name = $1',
+    // [item_name], (error, results) => {
+    //     if (error) {
+    //         throw error
+    //     }
+    // })
+
+    const item_id = parseInt(req.params.item_id)
+    pool.query('DELETE FROM menu_items WHERE item_id = $1',
+    [item_id], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+}
 
 
 module.exports = {
     viewMenuItems,
     insertMenuItem,
     updateMenuItem,
-    pool
+    deleteMenuItem
 } 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // This is for an editable row (what the row displays after a user clicks Update)
-const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange}) => {
+const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange, handleCancelClick}) => {
     return (
         <tr>
             {/* item_id --- CANNOT EDIT THIS SO NO INPUT LINE */}
@@ -47,6 +47,7 @@ const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange}) =>
 
             <td>
                 <button type="submit">Save</button>
+                <button type="submit" onClick={handleCancelClick}>Cancel</button>
             </td>
         </tr>
     )
