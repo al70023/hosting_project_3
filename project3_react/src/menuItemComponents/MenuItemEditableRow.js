@@ -12,6 +12,7 @@ const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange, han
             {/* item name */}
             <td>
                 <input 
+                    class="border-gray border-2 text-center"
                     type="text"
                     name="item_name"
                     required="required"
@@ -25,6 +26,7 @@ const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange, han
             {/* item price */}
             <td>
                 <input 
+                    class="border-gray border-2 text-center"
                     type="number"
                     name="item_price"
                     required="required"
@@ -37,6 +39,7 @@ const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange, han
             {/* item category */}
             <td>
                 <input 
+                    class="border-gray border-2 text-center"
                     type="text"
                     name="item_category"
                     required="required"

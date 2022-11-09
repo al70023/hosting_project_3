@@ -164,6 +164,7 @@ function MenuItems() {
                 <h2>Add a New Menu Item</h2>
                 <form onSubmit={handleAddFormSubmit}>
                     <input 
+                        class="border-gray border-2"
                         type="text"
                         name="item_name"
                         required="required"
@@ -171,6 +172,7 @@ function MenuItems() {
                         onChange={handleAddFormChange}
                     />
                     <input 
+                        class="border-gray border-2"
                         type="number"
                         step="0.01"
                         name="item_price"
@@ -179,6 +181,7 @@ function MenuItems() {
                         onChange={handleAddFormChange}
                     />
                     <input 
+                        class="border-gray border-2"
                         type="text"
                         name="item_category"
                         required="required"
