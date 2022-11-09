@@ -6,15 +6,18 @@ function ManagerHome(){
     return(
     <div >
         <div class="homeTopContainer">
-            <h1>
+            <h1 class="text-6xl">
                 Manager Home
             </h1>
-        <p>This is the landing page for managers.</p>
+        <p class="mt-6 mb-48">This is the landing page for managers.</p>
         </div>
         <div>
         <Link activeClassName="active" to={'/MenuItems'}>
-        <a>View Menu Items</a>
+        <a class="font-bold rounded bg-red-300">View Menu Items</a>
         </Link>
+        </div>
+        <div class="mt-5">
+        <a class="font-bold rounded bg-red-300">View Inventory</a>
         </div> 
     </div>
     );

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Nav(){
     return(
-        <div className="topnav">
+        <div className="topnav" class="container mx-auto bg-red-500 h-50 text-xl">
         
         <nav>
             <div>
@@ -30,6 +30,7 @@ function Nav(){
             <a>Customer Portal</a>
             </Link>
             </div> 
+            
         </nav>
 
         </div>

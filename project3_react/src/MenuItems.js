@@ -156,7 +156,7 @@ function MenuItems() {
 
     return(
         <div className = "menuItems">
-            <h1> Menu Items </h1>
+            <h1 class="text-6xl mb-9 mt-9"> Menu Items </h1>
 
             
 
