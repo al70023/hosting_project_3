@@ -1,25 +1,32 @@
 import React from 'react';
 //import './ServerHome.css';
+import "./ServerHome.css";
+
 
 function ServerHome() {
     return (
+
         <div >
             <div class="homeTopContainer">
                 <h1>
                     Server Home
                 </h1>
-                <p>This is the landing page for servers.</p>
+                <p>Welcome to the Landing page!</p>
                 <a href="/EntreeItems">
-                    <button>Entrees</button>
+                    <button className = "btnOne">Entrees</button>
                 </a>
                 <a href="/SideItems">
-                    <button>Sides</button>
+                    <button className = "btnTwo">Sides</button>
                 </a>
                 <a href="/DrinkItems">
-                    <button>Drinks</button>
+                    <button className = "btnThree">Drinks</button>
                 </a>
                 <a href="/DessertItems">
-                    <button>Desserts</button>
+                    <button className = "btnFour">Desserts</button>
+                </a>
+
+                <a href="Checkout">
+                    <button className = "btnFive">Checkout</button>
                 </a>
             </div>
         </div>

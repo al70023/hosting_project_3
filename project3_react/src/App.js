@@ -36,6 +36,7 @@ import EntreeItems from './EntreeItems';
 import SideItems from "./SideItems";
 import DrinkItems from "./DrinkItems";
 import DessertItems from "./DessertItems";
+import Checkout from "./Checkout";
 
 
 
@@ -56,6 +57,7 @@ function App() {
             <Route exact path="/SideItems" element={<SideItems />} />
             <Route exact path="/DrinkItems" element={<DrinkItems />} />
             <Route exact path="/DessertItems" element={<DessertItems />} />
+            <Route exact path="/Checkout" element={<Checkout />} />
           </Routes>
         </div>
       </Router>
