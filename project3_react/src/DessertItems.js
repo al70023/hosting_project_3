@@ -39,6 +39,7 @@ function DessertItems() {
                             {/* Table Column Headers */}
                             <th>Name</th> 
                             <th>Price</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@ function DessertItems() {
                             <tr>
                                 <td>{dessertItem.item_name}</td>
                                 <td>{dessertItem.item_price}</td>
+                                <td><button>Add Item</button></td>
 
                             </tr>
                         ))}

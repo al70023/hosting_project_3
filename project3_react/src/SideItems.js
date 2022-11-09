@@ -39,6 +39,7 @@ function SideItems() {
                             {/* Table Column Headers */}
                             <th>Name</th> 
                             <th>Price</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@ function SideItems() {
                             <tr>
                                 <td>{sideItem.item_name}</td>
                                 <td>{sideItem.item_price}</td>
+                                <td><button>Add Item</button></td>
 
                             </tr>
                         ))}

@@ -39,6 +39,7 @@ function EntreeItems() {
                             {/* Table Column Headers */}
                             <th>Name</th> 
                             <th>Price</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@ function EntreeItems() {
                             <tr>
                                 <td>{entreeItem.item_name}</td>
                                 <td>{entreeItem.item_price}</td>
+                                <td><button>Add Item</button></td>
 
                             </tr>
                         ))}

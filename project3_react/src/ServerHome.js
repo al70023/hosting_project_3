@@ -1,6 +1,5 @@
 import React from 'react';
-//import './ServerHome.css';
-import "./ServerHome.css";
+import './ServerHome.css';
 
 
 function ServerHome() {
