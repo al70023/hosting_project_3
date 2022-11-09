@@ -8,7 +8,7 @@ const MenuItemReadOnlyRow = ({ menuItem, handleEditClick, handleDeleteClick }) =
             <td>{menuItem.item_price}</td>
             <td>{menuItem.item_category}</td>
             <td>
-                <button type="button" onClick={(event) => handleEditClick(event, menuItem)}>Edit</button>
+                <button type="button" class="editButton" onClick={(event) => handleEditClick(event, menuItem)}>Edit</button>
             </td>
 
             {/* <td>

@@ -185,7 +185,7 @@ function MenuItems() {
                         placeholder="Enter item category..."
                         onChange={handleAddFormChange}
                     />
-                    <button type="submit">Add New Menu Item</button>
+                    <button type="submit" class="addMenuItemButton">Add New Menu Item</button>
                 </form>
 
                 <form onSubmit={handleEditFormSubmit}>

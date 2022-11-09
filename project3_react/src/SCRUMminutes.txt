@@ -1,0 +1,11 @@
+Meeting: 11/1/2022
+    Minutes: This was our first SCRUM meeting for the project so there was no previous meeting.
+
+Meeting: 11/4/2022
+    Minutes: In the previous meeting, we looked at the designs for our three user interfaces (manager, server, and customer). 
+    We also made plans for the next set of features and functionalities. 
+    Specifically, we will focus on creating CRUD operations for the menu items and working on the front end interface for the server. 
+
+Meeting 11/7/2022
+    Minutes: In the previous meeting, we looked over how the functionality for the menu items page is coming along, as well as the progress on the server page. 
+    We made plans to add the update and delete feature to the menu items page, as well as continue working on the order pages. 

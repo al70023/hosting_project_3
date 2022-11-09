@@ -16,6 +16,7 @@ const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange, han
                     name="item_name"
                     required="required"
                     placeholder="Enter item name..."
+                    
                     value={editFormData.item_name}
                     onChange={handleEditFormChange}
                 />
@@ -46,8 +47,8 @@ const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange, han
             </td>
 
             <td>
-                <button type="submit">Save</button>
-                <button type="submit" onClick={handleCancelClick}>Cancel</button>
+                <button type="submit" class="saveButton">Save</button>
+                <button type="submit" class="deleteButton" onClick={handleCancelClick}>Cancel</button>
             </td>
         </tr>
     )
