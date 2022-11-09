@@ -23,7 +23,7 @@ function CustomerHome(){
                     <button className = "btnFour">Desserts</button>
                 </a>
 
-                <a href="Checkout">
+                <a href="/Checkout">
                     <button className = "btnFive">Checkout</button>
                 </a>
             </div>
