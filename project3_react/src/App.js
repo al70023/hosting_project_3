@@ -17,6 +17,7 @@ import Checkout from "./Checkout";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 export var items = [];
+export var totalCost = 0;
 
 function App() {
     return (
