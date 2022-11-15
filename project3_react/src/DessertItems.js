@@ -1,18 +1,12 @@
 import React from 'react';
-import { useState, useEffect, Fragment } from 'react';
+import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
 import './DessertItems.css';
 
 function DessertItems() {
     // Data state variable defaulted to an empty array (for printing out the data)
     const [dessertItemsData, setDessertItemsData] = useState([]);
 
-    // Data state variable for the data from the add dessert item form
-    const [addFormData, setAddFormData] = useState({
-        item_name: '',
-        item_price: '',
-    })
-
-    const [editDessertItemID, setEditDessertItemID] = useState(null);
+    const [items, setItemsOrdered] = useState(JSON.parse(localStorage.getItem("itemsOrderded")) || []);
 
     const fetchDessertItems = () => {
         fetch('http://localhost:3001/DessertItems')
@@ -25,7 +19,48 @@ function DessertItems() {
         fetchDessertItems();
     }, []);
 
-    console.log(dessertItemsData);
+    function addItem(dessertItem) {
+        // Check if we already have an array in local storage.
+        var items = localStorage.getItem("itemsOrdered");
+
+        // If not, create the array.
+        if (items === null) items = [];
+
+        // If so, decode the array. 
+        else items = JSON.parse(items);
+
+        // Add our new item. 
+        items.push(dessertItem);
+
+        // Encode the array.
+        items = JSON.stringify(items);
+
+        // Add back to LocalStorage. 
+        localStorage.setItem("itemsOrdered", items);
+        
+        setItemsOrdered([...items, dessertItem])
+    }
+
+    function removeItem(dessertItem) {
+        // Check if we already have an array in local storage.
+        var items = JSON.parse(localStorage.getItem("itemsOrdered"));
+
+        // Remove item
+        for (var i = 0; i < items.length; i++) {    
+            if (items[i].item_name === dessertItem.item_name) { 
+                items.splice(i, 1); 
+            }
+        }
+
+        // Encode the array.
+        items = JSON.stringify(items);
+
+        // Add back to LocalStorage. 
+        localStorage.setItem("itemsOrdered", items);
+        
+        setItemsOrdered([...items, dessertItem])
+    }
+
     return(
         <div className = "dessertItems">
             <h1> Dessert Items </h1>
@@ -47,8 +82,7 @@ function DessertItems() {
                             <tr>
                                 <td>{dessertItem.item_name}</td>
                                 <td>{dessertItem.item_price}</td>
-                                <td><button>Add Item</button></td>
-
+                                <td><button type="button" onClick={() => addItem(dessertItem)}>Add Item</button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -59,7 +93,14 @@ function DessertItems() {
 
             </div>
         
-
+            <h1>Orders</h1>
+            <ol>
+                {JSON.parse(localStorage.getItem("itemsOrdered")).map((item) =>
+                    <li>
+                        {item.item_name}    {item.item_price}  <button type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                    </li>
+                )}
+            </ol>
             
         </div>
     );
