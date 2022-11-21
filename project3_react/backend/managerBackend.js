@@ -53,10 +53,57 @@ const deleteMenuItem = (req, res) => {
     })
 }
 
+const viewInventory = (req, res) => {
+    pool.query('SELECT * FROM inventory ORDER BY inventory_id', (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+const insertInventory = (req, res) => {
+    const {inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location} = req.body
+
+    pool.query('INSERT INTO inventory (inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location) VALUES($1, $2, $3)', 
+    [inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+}
+
+const updateInventory = (req, res) => {
+    const {inventory_id, inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location} = req.body
+
+    pool.query('UPDATE inventory SET inventory_name=$1, start_quantity=$2, current_quantity=$3, spoil_date=$4, received_date=$5, stored_location=$6 WHERE inventory_id = $7', 
+    [inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location, inventory_id], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+}
+
+const deleteInventory = (req, res) => {
+    const {inventory_id} = req.body
+
+    await pool.query('DELETE FROM inventory WHERE inventory_id = $1',
+    [inventory_id], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+}
+
+
 
 module.exports = {
     viewMenuItems,
     insertMenuItem,
     updateMenuItem,
-    deleteMenuItem
+    deleteMenuItem,
+    viewInventory,
+    insertInventory,
+    updateInventory,
+    deleteInventory
 } 
