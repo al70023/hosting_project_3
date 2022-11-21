@@ -43,17 +43,9 @@ const updateMenuItem = (req, res) => {
 }
 
 const deleteMenuItem = (req, res) => {
-    // const {item_name} = req.body
+    const {item_id} = req.body
 
-    // pool.query('DELETE FROM menu_items WHERE item_name = $1',
-    // [item_name], (error, results) => {
-    //     if (error) {
-    //         throw error
-    //     }
-    // })
-
-    const item_id = parseInt(req.params.item_id)
-    pool.query('DELETE FROM menu_items WHERE item_id = $1',
+    await pool.query('DELETE FROM menu_items WHERE item_id = $1',
     [item_id], (error, results) => {
         if (error) {
             throw error

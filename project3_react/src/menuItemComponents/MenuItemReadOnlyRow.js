@@ -11,9 +11,9 @@ const MenuItemReadOnlyRow = ({ menuItem, handleEditClick, handleDeleteClick }) =
                 <button type="button" class="editButton" onClick={(event) => handleEditClick(event, menuItem)}>Edit</button>
             </td>
 
-            {/* <td>
-                <button type="button" onClick={(event) => handleDeleteClick(event, menuItem.item_id)}>Delete</button>
-            </td> */}
+            { <td>
+                <button type="button" class="deleteButton" onClick={() => handleDeleteClick(menuItem.item_id)}>Delete</button>
+            </td> }
         </tr>
     )
 }
