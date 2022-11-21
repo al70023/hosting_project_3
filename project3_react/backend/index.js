@@ -29,7 +29,11 @@ app.post('/menuItems/insert', dbManager.insertMenuItem)
 app.post('/menuItems/update', dbManager.updateMenuItem)
 app.delete('/menuItems/:item_id', dbManager.deleteMenuItem)
 
-
+// Routes for Inventory
+app.get('/Inventory', dbManager.viewInventory)
+app.post('/inventory/insert', dbManager.insertInventory)
+app.post('/inventory/update', dbManager.updateInventory)
+app.delete('/inventory/:inventory_id', dbManager.deleteInventory)
 
 
 // Routes for Server GUI

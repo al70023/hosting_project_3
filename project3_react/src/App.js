@@ -6,6 +6,7 @@ import ManagerHome from './ManagerHome';
 import CustomerHome from './CustomerHome';
 import Nav from './Nav';
 import MenuItems from './MenuItems';
+import Inventory from './Inventory';
 import EntreeItems from './EntreeItems';
 import SideItems from "./SideItems";
 import DrinkItems from "./DrinkItems";
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/ServerHome" element={<ServerHome />} />
             <Route exact path="/CustomerHome" element={<CustomerHome />} />
             <Route exact path="/MenuItems" element={<MenuItems />} />
+            <Route exact path="/Inventory" element={<Inventory />} />
             <Route exact path="/EntreeItems" element={<EntreeItems />} />
             <Route exact path="/SideItems" element={<SideItems />} />
             <Route exact path="/DrinkItems" element={<DrinkItems />} />
