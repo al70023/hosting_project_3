@@ -93,6 +93,7 @@ function Checkout() {
                         {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                             <li>
                                 {item.item_name}    {item.item_price}  <button className = "removeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                                <p><br></br></p>
                             </li>
                         )}
                     </ol>}
