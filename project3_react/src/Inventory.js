@@ -99,7 +99,7 @@ function Inventory() {
     // Takes in inventory as a parameter so that we can save the specific row id for that item
     const handleEditClick = (event, inventory) => {
         event.preventDefault();
-        setEditInventoryID(inventory.item_id);
+        setEditInventoryID(inventory.inventory_id);
 
         // Gets the new form values for a piece of edited item
         const formValues = {
