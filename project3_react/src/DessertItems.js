@@ -78,10 +78,10 @@ function DessertItems() {
 
     return(
         <div className = "dessertItems">
-            <h1> Dessert Items </h1>
-
 
             <div className = "dessertItemTable">
+                <button className = "btnDessertItem">Dessert Items</button>
+                <p><br></br></p>
                 <form>
                 <table>
                     <thead>
@@ -119,7 +119,7 @@ function DessertItems() {
             </ol>}
 
             <a href="Checkout">
-                <button className = "btnFive">Checkout</button>
+                <button className = "checkoutButton">Checkout</button>
             </a>
             
         </div>

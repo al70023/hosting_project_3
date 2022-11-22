@@ -15,6 +15,19 @@
     width: 10%;
   }
 
+  .btnDrinkItem {
+    background-color: #ff4c4c; /* Green */
+    border: none;
+    color: white;
+    top:10px;
+    width: 150px;
+    height: 50px;
+    position:relative;
+
+    bottom: 25px;
+  
+}
+
   .updateButton {
     border: none;
     padding: 15px;
@@ -58,6 +71,22 @@
     margin: 5px;
     cursor: pointer;
   }
+  .checkoutButton {
+   
+    background-color: #ff4c4c; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    position:relative;
+    top:50px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
 
   /* The next few classes are for styling the input boxes for the forms that adds new equipment 
   .idInput {

@@ -80,10 +80,10 @@ function EntreeItems() {
 
     return (
         <div className="entreeItems">
-            <h1> Entree Items </h1>
-
 
             <div className="entreeItemTable">
+                <button className = "btnEntreeItem">Entree Items</button>
+                <p><br></br></p>
                 <form>
                     <table>
                         <thead>
@@ -121,7 +121,7 @@ function EntreeItems() {
             </ol>}
 
         <a href="Checkout">
-            <button className = "btnFive">Checkout</button>
+            <button className = "checkoutButton">Checkout</button>
         </a>
 
         </div>

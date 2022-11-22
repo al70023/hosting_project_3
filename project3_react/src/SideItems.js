@@ -78,10 +78,10 @@ function SideItems() {
 
     return(
         <div className = "sideItems">
-            <h1> Side Items </h1>
-
 
             <div className = "sideItemTable">
+                <button className = "btnDrinkItem">Side Items</button>
+                <p><br></br></p>
                 <form>
                 <table>
                     <thead>
@@ -119,7 +119,7 @@ function SideItems() {
             </ol>}
 
             <a href="Checkout">
-                <button className = "btnFive">Checkout</button>
+                <button className = "checkoutButton">Checkout</button>
             </a>
             
         </div>
