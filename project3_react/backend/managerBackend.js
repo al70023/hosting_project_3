@@ -95,6 +95,14 @@ const deleteInventory = (req, res) => {
     })
 }
 
+const viewRestockReport = (req, res) => {
+    pool.query('SELECT * FROM inventory WHERE current_quantity < 3000 ORDER BY inventory_id' , (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
 
 
 module.exports = {
@@ -105,5 +113,6 @@ module.exports = {
     viewInventory,
     insertInventory,
     updateInventory,
-    deleteInventory
+    deleteInventory,
+    viewRestockReport
 } 

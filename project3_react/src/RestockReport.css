@@ -1,0 +1,6 @@
+.RestockItemTable table {
+    width: 1500px;
+    margin-left: 20px;
+    border: 1px solid;
+    border-collapse: collapse;
+  }

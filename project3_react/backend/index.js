@@ -43,3 +43,6 @@ app.get('/DrinkItems', dbServer.viewDrinkItems)
 app.get('/DessertItems', dbServer.viewDessertItems)
 app.get('/OrderSummary', dbServer.viewOrderSummary)
 app.post('/orderSummary/insert', dbServer.insertOrder)
+
+//Routes for reports
+app.get('/RestockReport', dbManager.viewRestockReport)

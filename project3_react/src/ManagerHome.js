@@ -19,6 +19,11 @@ function ManagerHome(){
         <div class="mt-5">
         <a class="font-bold rounded bg-red-300">View Inventory</a>
         </div> 
+        <div class="mt-5">
+        <Link activeClassName="active" to={'/RestockReport'}>
+        <a class="font-bold rounded bg-red-300">View Restock Report</a>
+        </Link>
+        </div>
     </div>
     );
 }

@@ -17,6 +17,7 @@ import OrderSummary from "./OrderSummary";
 
 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import RestockReport from "./RestockReport";
 
 export var items = [];
 export var totalCost = 0;
@@ -39,6 +40,7 @@ function App() {
             <Route exact path="/DessertItems" element={<DessertItems />} />
             <Route exact path="/Checkout" element={<Checkout />} />
             <Route exact path="/OrderSummary" element={<OrderSummary />} />
+            <Route exact path="/RestockReport" element={<RestockReport />} />
           </Routes>
         </div>
       </Router>
