@@ -9,3 +9,18 @@ Meeting: 11/4/2022
 Meeting 11/7/2022
     Minutes: In the previous meeting, we looked over how the functionality for the menu items page is coming along, as well as the progress on the server page. 
     We made plans to add the update and delete feature to the menu items page, as well as continue working on the order pages. 
+
+Meeting 11/11/2022
+    Minutes: In the previous meeting, we focused on the functionality for menu items for managers. 
+    We also worked on dividing tasks and goals for the orders page for the server and customer. 
+    We made plans to finish the orders pages for servers (they should be able to view the menu items) and spruce up the manager GUI.
+
+Meeting 11/16/2022
+    Minutes: In the previous meeting, we reviewed our findings from the user studies. 
+    It was really interesting seeing how our users perceived different features that we thought were really easy to use (and were proved otherwise). 
+    We also made plans to double check the delete functionality with the menu items and have orders carry over across multiple pages. 
+
+
+Meeting 11/16/2022
+    Minutes: In the previous meeting, we looked over existing functionality for menu items and for placing orders. 
+    We also made plans to complete functionality for inventory, finalize making orders, and start on the reports for the manager side (restock, sales, employees). 
