@@ -17,8 +17,7 @@ const pool = new Pool({
 
 
 const viewEntreeItems = (req, res) => {
-    // SQL query to get equipment, order by ascending order of equipment ID
-    pool.query("SELECT * from menu_items where item_category='entree';", (error, results) => {
+    pool.query("SELECT * from menu_items WHERE item_category='entree' ORDER BY item_id;", (error, results) => {
         if (error) {
             throw error
         }
@@ -27,8 +26,7 @@ const viewEntreeItems = (req, res) => {
 }
 
 const viewSideItems = (req, res) => {
-    // SQL query to get equipment, order by ascending order of equipment ID
-    pool.query("SELECT * from menu_items where item_category='side';", (error, results) => {
+    pool.query("SELECT * from menu_items WHERE item_category='side' ORDER BY item_id;", (error, results) => {
         if (error) {
             throw error
         }
@@ -37,8 +35,7 @@ const viewSideItems = (req, res) => {
 }
 
 const viewDrinkItems = (req, res) => {
-    // SQL query to get equipment, order by ascending order of equipment ID
-    pool.query("SELECT * from menu_items where item_category='drink';", (error, results) => {
+    pool.query("SELECT * from menu_items WHERE item_category='drink' ORDER BY item_id;", (error, results) => {
         if (error) {
             throw error
         }
@@ -47,8 +44,29 @@ const viewDrinkItems = (req, res) => {
 }
 
 const viewDessertItems = (req, res) => {
-    // SQL query to get equipment, order by ascending order of equipment ID
-    pool.query("SELECT * from menu_items where item_category='dessert';", (error, results) => {
+    pool.query("SELECT * from menu_items WHERE item_category='dessert' ORDER BY item_id;", (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+const insertOrder = (req, res) => {
+    const {time, cust_name, items_ordered, items_ordered_string, total_cost, credit_card_num, employee_id} = req.body
+
+    pool.query(
+        'INSERT INTO orders (time,cust_name,items_ordered,items_ordered_string,'
+        + 'total_cost,credit_card_num,employee_id) VALUES($1, $2, $3, $4, $5, $6, $7)', 
+        [time, cust_name, items_ordered, items_ordered_string, total_cost, credit_card_num, employee_id], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+}
+
+const viewOrderSummary = (req, res) => {
+    pool.query('SELECT * from orders ORDER BY order_id DESC LIMIT 1;', (error, results) => {
         if (error) {
             throw error
         }
@@ -61,5 +79,7 @@ module.exports = {
     viewSideItems,
     viewDrinkItems,
     viewDessertItems,
+    insertOrder,
+    viewOrderSummary,
     pool
 } 

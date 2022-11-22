@@ -12,6 +12,7 @@ import SideItems from "./SideItems";
 import DrinkItems from "./DrinkItems";
 import DessertItems from "./DessertItems";
 import Checkout from "./Checkout";
+import OrderSummary from "./OrderSummary";
 
 
 
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/DrinkItems" element={<DrinkItems />} />
             <Route exact path="/DessertItems" element={<DessertItems />} />
             <Route exact path="/Checkout" element={<Checkout />} />
+            <Route exact path="/OrderSummary" element={<OrderSummary />} />
           </Routes>
         </div>
       </Router>

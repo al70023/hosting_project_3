@@ -36,8 +36,10 @@ app.post('/inventory/update', dbManager.updateInventory)
 app.delete('/inventory/:inventory_id', dbManager.deleteInventory)
 
 
-// Routes for Server GUI
+// Routes for Server/Customer GUI
 app.get('/EntreeItems', dbServer.viewEntreeItems)
 app.get('/SideItems', dbServer.viewSideItems)
 app.get('/DrinkItems', dbServer.viewDrinkItems)
 app.get('/DessertItems', dbServer.viewDessertItems)
+app.get('/OrderSummary', dbServer.viewOrderSummary)
+app.post('/orderSummary/insert', dbServer.insertOrder)
