@@ -1,5 +1,5 @@
 import React from 'react';
-import './serverhome.css';
+import './ServerHome.css';
 
 
 function ServerHome() {
@@ -7,10 +7,8 @@ function ServerHome() {
 
         <div >
             <div class="homeTopContainer">
-                <h1>
-                    Server Home
-                </h1>
-                <p>Welcome to the Landing page!</p>
+                <button className = "btnServerHome">ServerHome</button>
+
                 <a href="/EntreeItems">
                     <button className = "btnOne">Entrees</button>
                 </a>
