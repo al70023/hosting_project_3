@@ -89,6 +89,31 @@
 
 }
 
+.addButton {
+  background-color: #ff4c4c; /* Green */
+  border: none;
+  color: white;
+  position:relative;
+  width: 150px;
+  height: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+.removeButton {
+  background-color: #ff4c4c; /* Green */
+  border: none;
+  color: white;
+  width: 125px;
+  height: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
   /* The next few classes are for styling the input boxes for the forms that adds new equipment 
   .idInput {
     padding: 3px;

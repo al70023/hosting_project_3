@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import './Checkout.css';
 
 function Checkout() {
 
@@ -81,22 +82,22 @@ function Checkout() {
     return (
         <div>
             <div class="CheckoutPage">
-                <h1>
-                    Checkout Page
-                </h1>
-                <br></br>
+                <p><br></br></p>
+                <button className = "btnCheckoutItem">Checkout Page</button>
+                <p><br></br></p>
+                <p><br></br></p>
                 <h1>Orders (Total is: {totalCost.toFixed(2)})</h1>
                 <br></br>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")) != null &&
                     <ol>
                         {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                             <li>
-                                {item.item_name}    {item.item_price}  <button type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                                {item.item_name}    {item.item_price}  <button className = "removeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                             </li>
                         )}
                     </ol>}
-
-                <button type="submit" onClick={handleSubmitOrder}>Submit Order</button>
+                <p><br></br></p>
+                <button className = "btnCheckoutSubmit" type="submit" onClick={handleSubmitOrder}>Submit Order</button>
 
             </div>
         </div>
