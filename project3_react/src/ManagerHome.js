@@ -17,7 +17,9 @@ function ManagerHome(){
         </Link>
         </div>
         <div class="mt-5">
+        <Link activeClassName="active" to={'/Inventory'}>
         <a class="font-bold rounded bg-red-300">View Inventory</a>
+        </Link>
         </div> 
         <div class="mt-5">
         <Link activeClassName="active" to={'/RestockReport'}>
