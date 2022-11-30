@@ -1,4 +1,4 @@
-const { setRandomFallback } = require('bcryptjs');
+//const { setRandomFallback } = require('bcryptjs');
 const { Pool } = require('pg');
 const dotenv = require('dotenv').config();
 
@@ -107,7 +107,14 @@ const viewRestockReport = (req, res) => {
 
 const viewSalesReport = (req, res) => {
     const {start_date, end_date} = req.body
-    console.log(start_date);
+    
+    const string1 = new String(start_date);
+    const string2 = new String(end_date);
+    if(string1.length != 16 || string2.length != 16){
+        console.log(string1);
+        console.log(string1.length);
+        return;
+    }
     pool.query("SELECT * FROM orders WHERE time between $1 and $2 ORDER BY time" , [start_date, end_date], (error, results) => {
         if (error) {
             throw error

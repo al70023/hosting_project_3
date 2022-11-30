@@ -69,19 +69,19 @@ function SalesReport() {
             <h1 class="text-6xl"> Sales Report </h1>
             <form onSubmit={handleAddFormSubmit}>
                     <input 
-                        class="border-gray border-2"
+                        class="border-gray border-2 w-60"
                         type="text"
                         name="start_date"
                         required="required"
-                        placeholder="Enter start date..."
+                        placeholder="Enter start date... (MM/DD/YYYY)"
                         onChange={handleAddFormChange}
                     />
                     <input 
-                        class="border-gray border-2"
+                        class="border-gray border-2 w-60"
                         type="text"
                         name="end_date"
                         required="required"
-                        placeholder="Enter end date..."
+                        placeholder="Enter end date... (MM/DD/YYYY) "
                         onChange={handleAddFormChange}
                     />
                     
