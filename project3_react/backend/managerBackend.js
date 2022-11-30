@@ -1,3 +1,4 @@
+const { setRandomFallback } = require('bcryptjs');
 const { Pool } = require('pg');
 const dotenv = require('dotenv').config();
 
@@ -104,6 +105,17 @@ const viewRestockReport = (req, res) => {
     })
 }
 
+const viewSalesReport = (req, res) => {
+    const {start_date, end_date} = req.body
+    console.log(start_date);
+    pool.query("SELECT * FROM orders WHERE time between $1 and $2 ORDER BY time" , [start_date, end_date], (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
 
 module.exports = {
     viewMenuItems,
@@ -114,5 +126,6 @@ module.exports = {
     insertInventory,
     updateInventory,
     deleteInventory,
-    viewRestockReport
+    viewRestockReport,
+    viewSalesReport
 } 
