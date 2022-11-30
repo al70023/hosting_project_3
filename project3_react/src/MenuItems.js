@@ -149,7 +149,7 @@ function MenuItems() {
 
     // VIEWING ALL MENU ITEMS
     const fetchMenuItems = () => {
-        fetch('http://localhost:3001/MenuItems')
+        fetch('http://localhost:3001/MenuItems', {mode: 'cors'})
         .then(res => res.json())
         .then(json => setMenuItemsData(json))
     }
