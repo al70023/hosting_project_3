@@ -4,7 +4,7 @@ import Home from './Home';
 import ServerHome from './ServerHome';
 import ManagerHome from './ManagerHome';
 import CustomerHome from './CustomerHome';
-import Nav from './Nav';
+// import Nav from './Nav';
 import MenuItems from './MenuItems';
 import Inventory from './Inventory';
 import EntreeItems from './EntreeItems';
@@ -13,6 +13,7 @@ import DrinkItems from "./DrinkItems";
 import DessertItems from "./DessertItems";
 import Checkout from "./Checkout";
 import OrderSummary from "./OrderSummary";
+import EmployeeReport from "./EmployeeReport";
 
 
 
@@ -27,7 +28,7 @@ function App() {
     return (
       <Router>
         <div className="App">
-          <Nav />
+          {/* <Nav /> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/ManagerHome" element={<ManagerHome />} />
@@ -43,6 +44,7 @@ function App() {
             <Route exact path="/OrderSummary" element={<OrderSummary />} />
             <Route exact path="/RestockReport" element={<RestockReport />} />
             <Route exact path="/SalesReport" element={<SalesReport />} />
+            <Route exact path="/EmployeeReport" element={<EmployeeReport />} />
           </Routes>
         </div>
       </Router>

@@ -9,26 +9,31 @@ function ManagerHome(){
             <h1 class="text-6xl">
                 Manager Home
             </h1>
-        <p class="mt-6 mb-48">This is the landing page for managers.</p>
+        <p class="mt-6 mb-16">This is the landing page for managers.</p>
         </div>
         <div>
         <Link activeClassName="active" to={'/MenuItems'}>
-        <a class="font-bold rounded bg-red-300">View Menu Items</a>
+        <a class="font-bold rounded bg-red-300 text-lg">View Menu Items</a>
         </Link>
         </div>
         <div class="mt-5">
         <Link activeClassName="active" to={'/Inventory'}>
-        <a class="font-bold rounded bg-red-300">View Inventory</a>
+        <a class="font-bold rounded bg-red-300 text-lg">View Inventory</a>
         </Link>
         </div> 
         <div class="mt-5">
         <Link activeClassName="active" to={'/RestockReport'}>
-        <a class="font-bold rounded bg-red-300">View Restock Report</a>
+        <a class="font-bold rounded bg-red-300 text-lg">View Restock Report</a>
         </Link>
         </div>
         <div class="mt-5">
         <Link activeClassName="active" to={'/SalesReport'}>
-        <a class="font-bold rounded bg-red-300">View Sales Report</a>
+        <a class="font-bold rounded bg-red-300 text-lg">View Sales Report</a>
+        </Link>
+        </div>
+        <div class="mt-5">
+        <Link activeClassName="active" to={'/EmployeeReport'}>
+        <a class="font-bold rounded bg-red-300 text-lg">View Employee Report</a>
         </Link>
         </div>
     </div>

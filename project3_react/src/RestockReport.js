@@ -16,10 +16,34 @@ function RestockReport() {
         fetchRestockItems();
     }, []);
 
+    const handleAddFormSubmit = (event) => {
+        event.preventDefault();
+
+        // Assign the values from the form to a new period instance
+
+
+        // Specfifies what kind of request it is
+        const requestOptions = {
+            method: 'POST',             // POST = insert request
+            headers: {"Content-Type": "application/json"}
+                      
+        }
+
+        // Add the new inventory into the table
+        fetch('http://localhost:3001/RestockReport/Restock', requestOptions)
+            .then(res => res.json())
+            .then(json => setRestockItemsData(json))
+            .then(window.location.reload());
+
+    }
+
     return (
         <div className="">
             <h1 class="text-xl"> Restock Items </h1>
-            
+            <form onSubmit={handleAddFormSubmit}>
+                
+                <button type="submit" class="addInventoryButton">Restock all items</button>
+            </form>
 
             <div class="w-full bg-blue-100">
                 <form>

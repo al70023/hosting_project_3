@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import jwt_decode from 'jwt-decode'
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { gapi } from 'gapi-script';
-//import './Home.css';
+import './Home.css';
+
+import './App.css';
+import {Link} from 'react-router-dom';
 
 function Home(){
 
@@ -46,23 +49,46 @@ function Home(){
     }, []);
 
     return(
+    <body class="homeTopContainer">
         <div>
-            <div class="homeTopContainer">
-            <img class="mx-auto mt-24"src="https://upload.wikimedia.org/wikipedia/commons/0/02/Chick-fil-A_Logo.svg"/>
+        <center><img class="homeLogo" src="http://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx" alt="Chick-fil-A logo"/></center>
+        </div>
+
+        <div>
+            <Link activeClassName="active" to={'/'}>
+            <a >Home</a>
+            </Link>
+
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>Manager Portal</a>
+            </Link>
+
+            <Link activeClassName="active" to={'/ServerHome'}>
+            <a>Server Portal</a>
+            </Link>
+
+            <Link activeClassName="active" to={'/CustomerHome'}>
+            <a>Customer Portal</a>
+            </Link>
+            </div> 
+
+        <div>
+            
+            <img class="h-64 absolute top-50 right-0"src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Stories%20Images/2019/07/Steve%20robinson/cows.jpg?h=960&w=1440&la=en"/>
         
             <form action="/ServerHome" method="POST">
 
-                <div class="form-group">
+                <div class="form-group mt-5">
                     <label for="employee_id">Employee ID</label>
-                    <input type="number" class="form-control" name="employee_id"></input>
+                    <input type="number" class="form-control border-gray border-2 w-60" name="employee_id"></input>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password"></input>
+                    <label for="password" class="mx-3">Password</label>
+                    <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password"></input>
                 </div>
 
-                <button type="submit">Login</button>
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>
             </form>
         </div>
 
@@ -79,7 +105,7 @@ function Home(){
 
 
         
-    </div>
+    </body>
     );
 }
 
