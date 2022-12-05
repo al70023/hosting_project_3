@@ -133,7 +133,7 @@ const viewSalesReport = (req, res) => {
 
 const viewEmployeeReport = (req, res) => {
 
-    pool.query("select DISTINCT employees.employee_name, sum(total_cost) over (PARTITION BY orders.employee_id) from orders, employees where employees.employee_id = orders.employee_id order by sum DESC;", (error, results) => {
+    pool.query("select DISTINCT employees.employee_id, employees.employee_name, sum(total_cost) over (PARTITION BY orders.employee_id) from orders, employees where employees.employee_id = orders.employee_id order by sum DESC;", (error, results) => {
         if (error) {
             throw error
         }

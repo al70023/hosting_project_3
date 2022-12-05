@@ -49,6 +49,7 @@ function Home(){
         <div>
             <div class="homeTopContainer">
             <img class="mx-auto mt-24"src="https://upload.wikimedia.org/wikipedia/commons/0/02/Chick-fil-A_Logo.svg"/>
+            <img class="h-64 absolute top-50 right-0"src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Stories%20Images/2019/07/Steve%20robinson/cows.jpg?h=960&w=1440&la=en"/>
         
             <form action="/ServerHome" method="POST">
 

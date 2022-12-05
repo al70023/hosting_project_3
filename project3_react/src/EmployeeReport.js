@@ -23,12 +23,13 @@ function EmployeeReport() {
             <h1 class="text-6xl"> Employee Report </h1>
 
 
-            <div class="w-full bg-blue-100">
+            <div class="w-full bg-blue-100 mt-10">
                 <form>
                     <table className='EmployeeItemTable' class="table-auto w-full shadow-md rounded border-separate border-spacing-y-4">
                         <thead>
                             <tr>
                                 {/* Table Column Headers */}
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th>Total Sales</th>
                                 
@@ -37,6 +38,7 @@ function EmployeeReport() {
                         <tbody>
                             {EmployeeItemsData.map((EmployeeItem) => (  
                                 <tr>
+                                    <td name="ID">{EmployeeItem.employee_id}</td>
                                     <td name="name">{EmployeeItem.employee_name}</td>
                                     <td name="quantity">{"$"+(Number(EmployeeItem.sum.toFixed(2))).toString()}</td>
                                     
