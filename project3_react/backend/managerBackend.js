@@ -104,6 +104,14 @@ const viewRestockReport = (req, res) => {
         res.status(200).json(results.rows)
     })
 }
+const Restock = (req, res) => {
+    pool.query('Update inventory SET current_quantity = start_quantity' , (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
 
 const viewSalesReport = (req, res) => {
     const {start_date, end_date} = req.body
@@ -123,6 +131,17 @@ const viewSalesReport = (req, res) => {
     })
 }
 
+const viewEmployeeReport = (req, res) => {
+
+    pool.query("select DISTINCT employees.employee_name, sum(total_cost) over (PARTITION BY orders.employee_id) from orders, employees where employees.employee_id = orders.employee_id order by sum;", (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+
 
 module.exports = {
     viewMenuItems,
@@ -134,5 +153,7 @@ module.exports = {
     updateInventory,
     deleteInventory,
     viewRestockReport,
-    viewSalesReport
+    Restock,
+    viewSalesReport,
+    viewEmployeeReport
 } 

@@ -31,6 +31,11 @@ function ManagerHome(){
         <a class="font-bold rounded bg-red-300">View Sales Report</a>
         </Link>
         </div>
+        <div class="mt-5">
+        <Link activeClassName="active" to={'/EmployeeReport'}>
+        <a class="font-bold rounded bg-red-300">View Employee Report</a>
+        </Link>
+        </div>
     </div>
     );
 }

@@ -13,6 +13,7 @@ import DrinkItems from "./DrinkItems";
 import DessertItems from "./DessertItems";
 import Checkout from "./Checkout";
 import OrderSummary from "./OrderSummary";
+import EmployeeReport from "./EmployeeReport";
 
 
 
@@ -43,6 +44,7 @@ function App() {
             <Route exact path="/OrderSummary" element={<OrderSummary />} />
             <Route exact path="/RestockReport" element={<RestockReport />} />
             <Route exact path="/SalesReport" element={<SalesReport />} />
+            <Route exact path="/EmployeeReport" element={<EmployeeReport />} />
           </Routes>
         </div>
       </Router>
