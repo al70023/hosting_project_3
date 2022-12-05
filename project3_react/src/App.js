@@ -4,7 +4,7 @@ import Home from './Home';
 import ServerHome from './ServerHome';
 import ManagerHome from './ManagerHome';
 import CustomerHome from './CustomerHome';
-import Nav from './Nav';
+// import Nav from './Nav';
 import MenuItems from './MenuItems';
 import Inventory from './Inventory';
 import EntreeItems from './EntreeItems';
@@ -28,7 +28,7 @@ function App() {
     return (
       <Router>
         <div className="App">
-          <Nav />
+          {/* <Nav /> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/ManagerHome" element={<ManagerHome />} />
