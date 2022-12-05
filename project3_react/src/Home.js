@@ -54,6 +54,44 @@ function Home(){
         <center><img class="homeLogo" src="http://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx" alt="Chick-fil-A logo"/></center>
         </div>
 
+        <div class="employeeBox">
+            Employee Login
+
+            <form action="/ServerHome" method="POST">
+
+                <div class="form-group mt-5">
+                    <label for="employee_id">Employee ID</label>
+                    <input type="number" class="form-control border-gray border-2 w-60" name="employee_id"></input>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="mx-3">Password</label>
+                    <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password"></input>
+                </div>
+
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>
+            </form>
+
+        </div>
+
+        <div class="customerBox">
+            Customer Login
+
+            <div id="signInDiv"></div>
+            { Object.keys(user).length != 0 && 
+                <div>
+                    <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
+                    <img src={user.picture}></img>
+                    <h3>{user.name}</h3>
+                    {console.log(user)}
+                </div>
+            }
+        
+
+        </div>
+
+        <img class="h-64 absolute top-50 right-0"src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Stories%20Images/2019/07/Steve%20robinson/cows.jpg?h=960&w=1440&la=en"/>
+
         <div>
             <Link activeClassName="active" to={'/'}>
             <a >Home</a>
@@ -72,37 +110,7 @@ function Home(){
             </Link>
             </div> 
 
-        <div>
-            
-            <img class="h-64 absolute top-50 right-0"src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Stories%20Images/2019/07/Steve%20robinson/cows.jpg?h=960&w=1440&la=en"/>
         
-            <form action="/ServerHome" method="POST">
-
-                <div class="form-group mt-5">
-                    <label for="employee_id">Employee ID</label>
-                    <input type="number" class="form-control border-gray border-2 w-60" name="employee_id"></input>
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="mx-3">Password</label>
-                    <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password"></input>
-                </div>
-
-                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>
-            </form>
-        </div>
-
-        <div id="signInDiv"></div>
-        { Object.keys(user).length != 0 && 
-            <div>
-                <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
-                <img src={user.picture}></img>
-                <h3>{user.name}</h3>
-                {console.log(user)}
-            </div>
-        }
-        
-
 
         
     </body>
