@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import jwt_decode from 'jwt-decode'
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { gapi } from 'gapi-script';
-//import './Home.css';
+import './Home.css';
 
 function Home(){
 
@@ -52,17 +52,17 @@ function Home(){
         
             <form action="/ServerHome" method="POST">
 
-                <div class="form-group">
+                <div class="form-group mt-5">
                     <label for="employee_id">Employee ID</label>
-                    <input type="number" class="form-control" name="employee_id"></input>
+                    <input type="number" class="form-control border-gray border-2 w-60" name="employee_id"></input>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password"></input>
+                    <label for="password" class="mx-3">Password</label>
+                    <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password"></input>
                 </div>
 
-                <button type="submit">Login</button>
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>
             </form>
         </div>
 

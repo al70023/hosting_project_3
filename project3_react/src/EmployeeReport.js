@@ -20,7 +20,7 @@ function EmployeeReport() {
 
     return (
         <div className="">
-            <h1 class="text-6xl"> Employee Items </h1>
+            <h1 class="text-6xl"> Employee Report </h1>
 
 
             <div class="w-full bg-blue-100">
@@ -38,7 +38,7 @@ function EmployeeReport() {
                             {EmployeeItemsData.map((EmployeeItem) => (  
                                 <tr>
                                     <td name="name">{EmployeeItem.employee_name}</td>
-                                    <td name="quantity">{Number(EmployeeItem.sum.toFixed(2))}</td>
+                                    <td name="quantity">{"$"+(Number(EmployeeItem.sum.toFixed(2))).toString()}</td>
                                     
                                 </tr>
                             ))}
