@@ -11,11 +11,12 @@ app.listen(PORT, () => {
   console.log("server has started on port", PORT);
 });
 
-var corsOptions = {
-  origin: "http://localhost:3000"
-}
+// var corsOptions = {
+//   origin: "http://localhost:3000"
+// }
 
-app.use(cors(corsOptions))
+//app.use(cors(corsOptions))
+app.use(cors())
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
@@ -47,3 +48,4 @@ app.post('/orderSummary/insert', dbServer.insertOrder)
 
 //Routes for reports
 app.get('/RestockReport', dbManager.viewRestockReport)
+app.post('/SalesReport', dbManager.viewSalesReport)
