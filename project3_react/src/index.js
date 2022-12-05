@@ -6,10 +6,10 @@ import GoogleTranslate from './GoogleTranslate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <div>
     <App />
     <GoogleTranslate />
-  </React.StrictMode>
+  </div>
 );
 
 
