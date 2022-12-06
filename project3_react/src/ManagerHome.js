@@ -3,11 +3,23 @@ import {Link} from 'react-router-dom';
 import './ManagerHome.css';
 
 function ManagerHome(){
+
+    function handleSignOut(event) {
+        sessionStorage.clear();
+        window.location.replace('/');
+    }
+
     return(
     <div >
         <div class="homeTopContainer">
+        <p class = "employeeSession">
+            Employee: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_name}
+            <br/>
+            ID: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_id}
+        </p>    
         <button className = "btnManagerHome">Manager Home</button>
         </div>
+        <button class ="btnLogOutt" onClick={ (e) => handleSignOut(e)}>Log Out</button>
         <div>
         <Link activeClassName="active" to={'/MenuItems'}>
         <a>
