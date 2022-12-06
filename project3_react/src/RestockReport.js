@@ -6,6 +6,10 @@ import './RestockReport.css';
 function RestockReport() {
 
     const [restockItemsData, setRestockItemsData] = useState([]);
+    const [addFormData, setAddFormData] = useState({
+        Item: '',
+        Amount: ''
+    })
 
     const fetchRestockItems = () => {
         fetch('http://localhost:3001/RestockReport')
@@ -17,17 +21,61 @@ function RestockReport() {
         fetchRestockItems();
     }, []);
 
+    const handleAddFormChange = (event) => {
+        event.preventDefault();
+
+        // Will get the name attribute for each of the inputs in the form and assign it to fieldName
+        const fieldName = event.target.getAttribute('name');
+        
+        // Will get the actual value that the user inputted
+        const fieldValue = event.target.value;
+
+        // Make a copy of the form data
+        const newFormData = {...addFormData};
+        newFormData[fieldName] = fieldValue;
+
+        setAddFormData(newFormData);
+    }
+
+
     const handleAddFormSubmit = (event) => {
         event.preventDefault();
 
         // Assign the values from the form to a new period instance
-
+        const newRestock = {
+            Item: "NA",
+            Amount: "NA"
+        };
 
         // Specfifies what kind of request it is
         const requestOptions = {
             method: 'POST',             // POST = insert request
-            headers: {"Content-Type": "application/json"}
-                      
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newRestock)  
+        }
+
+        // Add the new inventory into the table
+        fetch('http://localhost:3001/RestockReport/Restock', requestOptions)
+            .then(res => res.json())
+            .then(json => setRestockItemsData(json))
+            .then(window.location.reload());
+
+    }
+
+    const handleAddFormSubmit2 = (event) => {
+        event.preventDefault();
+
+        // Assign the values from the form to a new period instance
+        const newRestock = {
+            Item: addFormData.Item_name,
+            Amount: addFormData.Amount
+        };
+
+        // Specfifies what kind of request it is
+        const requestOptions = {
+            method: 'POST',             // POST = insert request
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newRestock)
         }
 
         // Add the new inventory into the table
@@ -40,18 +88,35 @@ function RestockReport() {
 
     return (
         <div className="">
-<<<<<<< HEAD
-            <h1 class="text-6xl"> Restock Report </h1>
-=======
 
 
             <button className = "btnRestock">Restock</button>
->>>>>>> 0f4f4a917b1f54094c45bb908c7c710f62fc831d
-            <form onSubmit={handleAddFormSubmit}>
+            <form onSubmit={handleAddFormSubmit2}>
                 
                 <button type="submit" class="btnRestockItems">Restock All Items</button>
                 
             </form>
+
+            <form class="mt-8" onSubmit={handleAddFormSubmit}>
+                    <input 
+                        class="border-gray border-2 w-60"
+                        type="text"
+                        name="Item_name"
+                        required="required"
+                        placeholder="Item name"
+                        onChange={handleAddFormChange}
+                    />
+                    <input 
+                        class="border-gray border-2 w-60"
+                        type="Restock_amount"
+                        name="end_date"
+                        required="required"
+                        placeholder="Amount"
+                        onChange={handleAddFormChange}
+                    />
+                    
+                    <button type="submit" class="btnSubmitTimePeriod">Restock Item</button>
+                </form>
 
             <div>
             <Link activeClassName="active" to={'/ManagerHome'}>

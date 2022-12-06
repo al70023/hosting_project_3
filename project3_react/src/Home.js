@@ -106,7 +106,7 @@ function Home() {
     return(
     <body class="homeTopContainer">
         <div>
-        <center><img class="homeLogo" src="http://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx" alt="Chick-fil-A logo"/></center>
+        <center><img class="homeLogo" src="https://cloudfront-us-east-1.images.arcpublishing.com/gray/GTPSWOMZ3BDMTGK52CDFYJWWLI.jpg" alt="Chick-fil-A logo"/></center>
         Welcome to Chick-fil-A!
         </div>
 

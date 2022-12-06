@@ -48,7 +48,7 @@ app.post('/orderSummary/insert', dbServer.insertOrder)
 app.post('/employeeLogin/info', dbServer.employeeLogin)
 
 //Routes for reports
-app.post('/RestockReport', dbManager.viewRestockReport)
+app.get('/RestockReport', dbManager.viewRestockReport)
 app.post('/RestockReport/Restock', dbManager.Restock)
 app.post('/SalesReport', dbManager.viewSalesReport)
 app.get('/EmployeeReport', dbManager.viewEmployeeReport)
