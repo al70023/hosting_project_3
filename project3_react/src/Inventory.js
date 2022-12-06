@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect, Fragment } from 'react';
+import {Link} from 'react-router-dom';
 import InventoryReadOnlyRow from './inventoryComponents/InventoryReadOnlyRow';
 import InventoryEditableRow from './inventoryComponents/InventoryEditableRow';
 import './Inventory.css';
@@ -178,6 +179,14 @@ function Inventory() {
         <div className = "inventory">
             <button className = "btnInventory">Inventory</button>
 
+            <div>
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>
+                <button className = "backInventoryButton"> Back</button>
+            </a>
+            </Link>
+            </div>
+
             <div className = "inventoryTable">
                 <form onSubmit={handleAddFormSubmit}>
                     <input 
@@ -243,7 +252,6 @@ function Inventory() {
                             <th>Spoil Date</th>
                             <th>Received Date</th>
                             <th>Stored Location</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>

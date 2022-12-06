@@ -1,6 +1,6 @@
 import React from 'react';
 import './ServerHome.css';
-import './CustomerHome.css';
+import './CustomerHome.css'
 
 function CustomerHome(){
     return (

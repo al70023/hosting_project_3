@@ -50,8 +50,8 @@ const MenuItemEditableRow = ({ menuItem, editFormData, handleEditFormChange, han
             </td>
 
             <td>
-                <button type="submit" class="saveButton">Save</button>
-                <button type="submit" class="deleteButton" onClick={handleCancelClick}>Cancel</button>
+                <button type="submit" class="saveMenuItemButton">Save</button>
+                <button type="submit" class="cancelMenuItemButton" onClick={handleCancelClick}>Cancel</button>
             </td>
         </tr>
     )

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
 import './ExcessReport.css';
+import {Link} from 'react-router-dom';
 
 function ExcessReport() {
 
@@ -64,7 +65,16 @@ function ExcessReport() {
 
     return (
         <div className="">
-            <h1 class="text-6xl"> Excess Report </h1>
+             <button className = "btnExcessReport">Excess Report</button>
+
+            <div>
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>
+                <button className = "backExcessButton">Back</button>
+            </a>
+            </Link>
+            </div>
+
             <form onSubmit={handleAddFormSubmit}>
                     <input 
                         class="border-gray border-2 w-60"
