@@ -142,15 +142,13 @@ function Checkout() {
             <div class="CheckoutPage">
                 <p><br></br></p>
                 <button className = "btnCheckoutItem">Checkout Page</button>
-                <p><br></br></p>
-                <p><br></br></p>
                 <h1>Orders (Total is: {totalCost.toFixed(2)})</h1>
                 <br></br>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")) != null &&
                     <ol>
                         {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                             <li>
-                                {item.item_name}    {item.item_price}  <button className = "removeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                                {item.item_name}    {item.item_price}  <button className = "removeCheckoutButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                                 <p><br></br></p>
                             </li>
                         )}
@@ -177,7 +175,7 @@ function Checkout() {
                 </GoogleMap>
             </LoadScript>
             </div>
-            <button id="buttonDiv" onClick={ (e) => handleStoreLocator(e)}>Store Locator</button>
+            <button className = "btnStoreLocator" id="buttonDiv" onClick={ (e) => handleStoreLocator(e)}>Store Locator</button>
             </center>
         </div>
     );

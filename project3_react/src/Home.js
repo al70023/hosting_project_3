@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import jwt_decode from 'jwt-decode'
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import { gapi } from 'gapi-script';
 import './Home.css';
 
 import './App.css';
