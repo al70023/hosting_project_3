@@ -1,6 +1,16 @@
 import React from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
 import './SideItems.css';
+import { useNavigate} from "react-router-dom";
+
+const Back = () => {
+    let navigate = useNavigate();
+    return (
+        <>
+          <button onClick={() => navigate(-1)}>Back</button> 
+        </>
+    );
+};
 
 function SideItems() {
     // Data state variable defaulted to an empty array (for printing out the data)
@@ -81,6 +91,7 @@ function SideItems() {
 
             <div className = "sideItemTable">
                 <button className = "btnSideItem">Side Items</button>
+                <Back/>
                 <p><br></br></p>
                 <form>
                 <table>

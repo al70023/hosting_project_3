@@ -25,7 +25,7 @@ function Home(){
     }
 
     function handleEmployeeLogin(event) {
-        if () {
+        if (e) {
             // Add the new menu item into the table
             fetch('http://localhost:3001/employeeLogin/data', requestOptions)
             .then(res => res.json())

@@ -1,7 +1,16 @@
 import React, { Component, createContext } from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
 import './EntreeItems.css';
+import { useNavigate} from "react-router-dom";
 
+const Back = () => {
+    let navigate = useNavigate();
+    return (
+        <>
+          <button onClick={() => navigate(-1)}>Back</button> 
+        </>
+    );
+};
 
 
 function EntreeItems() {
@@ -83,6 +92,7 @@ function EntreeItems() {
 
             <div className="entreeItemTable">
                 <button className = "btnEntreeItem">Entree Items</button>
+                <Back/>
                 <p><br></br></p>
                 <form>
                     <table>

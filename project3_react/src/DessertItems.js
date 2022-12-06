@@ -1,6 +1,16 @@
 import React from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
+import { useNavigate} from "react-router-dom";
 import './DessertItems.css';
+
+const Back = () => {
+    let navigate = useNavigate();
+    return (
+        <>
+          <button onClick={() => navigate(-1)}>Back</button> 
+        </>
+    );
+};
 
 function DessertItems() {
     // Data state variable defaulted to an empty array (for printing out the data)
@@ -81,6 +91,7 @@ function DessertItems() {
 
             <div className = "dessertItemTable">
                 <button className = "btnDessertItem">Dessert Items</button>
+                <Back/>
                 <p><br></br></p>
                 <form>
                 <table>
