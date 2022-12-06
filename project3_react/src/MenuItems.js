@@ -211,7 +211,6 @@ function MenuItems() {
                             <th>Name</th> 
                             <th>Price</th>
                             <th>Category</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>

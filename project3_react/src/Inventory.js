@@ -252,7 +252,6 @@ function Inventory() {
                             <th>Spoil Date</th>
                             <th>Received Date</th>
                             <th>Stored Location</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -24,7 +24,7 @@ function Home(){
         document.getElementById("signInDiv").hidden = false;
     }
 
-    function handleEmployeeLogin(event) {
+    /*function handleEmployeeLogin(event) {
         if (e) {
             // Add the new menu item into the table
             fetch('http://localhost:3001/employeeLogin/data', requestOptions)
@@ -32,7 +32,7 @@ function Home(){
             // between this check the raw data of the employee 
             .then(window.location.replace('/OrderSummary'));
         }
-    }
+    }*/
 
     useEffect(() => {
         /* global google */
@@ -79,9 +79,7 @@ function Home(){
                 </div>
             </form>
 
-            <a href="Checkout">
-                <button onClick={ (e) => handleEmployeeLogin(e)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>            
-            </a>
+              
 
         </div>
 

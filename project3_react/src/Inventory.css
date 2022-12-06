@@ -32,12 +32,14 @@
     border: none;
     border-radius: 10px;
     background-color: #E51636;
+    font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
+    width:100px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 15px;
     margin: 5px;
     cursor: pointer;
   }
@@ -46,12 +48,16 @@
     border: none;
     border-radius: 10px;
     background-color: #E51636;
+    font-family: Verdana, sans-serif;
+    position: relative;
     color:white;
     padding: 15px;
+    width:100px;
+    top: 28px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 15px;
     margin: 5px;
     cursor: pointer;
   }
@@ -60,12 +66,14 @@
     border: none;
     border-radius: 10px;
     background-color: #E51636;
+    font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
+    width:100px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 15px;
     margin: 5px;
     cursor: pointer;
   }
@@ -74,26 +82,32 @@
     border: none;
     border-radius: 10px;
     background-color: #E51636;
+    font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 15px;
     margin: 5px;
     cursor: pointer;
   }
 
-  .deleteInventoryButton {
+  .cancelInventoryButton {
     border: none;
     border-radius: 10px;
     background-color: #E51636;
+    font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
+    width:100px;
+    position: relative;
+    left:140px;
+    bottom:35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 15px;
     margin: 5px;
     cursor: pointer;
   }

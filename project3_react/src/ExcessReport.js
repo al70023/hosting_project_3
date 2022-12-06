@@ -65,7 +65,7 @@ function ExcessReport() {
 
     return (
         <div className="">
-            <h1 class="text-6xl"> Excess Report </h1>
+             <button className = "btnExcessReport">Excess Report</button>
 
             <div>
             <Link activeClassName="active" to={'/ManagerHome'}>

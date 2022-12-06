@@ -21,7 +21,7 @@ function EmployeeReport() {
 
     return (
         <div className="">
-             <button className = "btnSalesReport">Employee Report</button>
+            <button className = "btnSalesReport">Employee Report</button>
 
             <div>
             <Link activeClassName="active" to={'/ManagerHome'}>
