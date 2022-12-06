@@ -113,13 +113,17 @@ function Home() {
                 </div>
 
                 <div class="form-group">
+                <br></br>
                     <label for="password" class="mx-3">Password</label>
                     <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password" onChange={handleLoginFormChange}></input>
                 </div>
                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button> 
             </form>           
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6a1013a739e61a223916fbd4d55becb1acc97f89
         </div>
 
         <div class="customerBox">

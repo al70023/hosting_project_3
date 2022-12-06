@@ -135,17 +135,17 @@ function MenuItems() {
     const handleDeleteClick = (item_id) => {
         //DELETE request using fetch with error handling
         fetch(`http://localhost:3001/menuItems/${item_id}`, { method: 'DELETE' })
-            //.then(window.location.reload(false))
+            .then(window.location.reload(false))
             .catch(error => {
                 console.error('There was an error!', error);
         });
 
-        const newMenuItems = [...menuItemsData];
-        const index = menuItemsData.findIndex((menuItem) => menuItem.item_id === item_id);
+        // const newMenuItems = [...menuItemsData];
+        // const index = menuItemsData.findIndex((menuItem) => menuItem.item_id === item_id);
 
-        newMenuItems.splice(index, 1);
+        // newMenuItems.splice(index, 1);
 
-        setMenuItemsData(newMenuItems);
+        // setMenuItemsData(newMenuItems);
     }
 
     // VIEWING ALL MENU ITEMS
