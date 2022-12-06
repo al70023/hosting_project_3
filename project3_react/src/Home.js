@@ -3,11 +3,13 @@ import jwt_decode from 'jwt-decode'
 import './Home.css';
 
 import './App.css';
-import {Link} from 'react-router-dom';
+import {json, Link} from 'react-router-dom';
 
-function Home(){
+function Home() {
 
     const [ user, setUser ] = useState(sessionStorage.getItem("googleSession") || {});
+
+    const [ employeeLoginData, setEmployeeLoginData ] = useState(sessionStorage.getItem("employeeSession") || []);
 
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
@@ -24,14 +26,50 @@ function Home(){
         document.getElementById("signInDiv").hidden = false;
     }
 
-    function handleEmployeeLogin(event) {
-        if (e) {
-            // Add the new menu item into the table
-            fetch('http://localhost:3001/employeeLogin/data', requestOptions)
-            .then(res => res.json())
-            // between this check the raw data of the employee 
-            .then(window.location.replace('/OrderSummary'));
+    // Data state variable for the data from the employee login
+    const [loginFormData, setLoginFormData] = useState({
+        employee_id: '',
+        password: '',
+    })
+    // Handling changes to employee login form
+    const handleLoginFormChange = (event) => {
+        event.preventDefault();
+
+        // Will get the name attribute for each of the inputs in the form and assign it to fieldName
+        const fieldName = event.target.getAttribute('name');
+        
+        // Will get the actual value that the user inputted
+        const fieldValue = event.target.value;
+
+        // Make a copy of the form data
+        const newFormData = {...loginFormData};
+        newFormData[fieldName] = fieldValue;
+
+        setLoginFormData(newFormData);
+    }
+
+    const handleEmployeeLogin = (event) => {
+        event.preventDefault();
+
+        // Assign the values from the form to a new instance
+        const newEmployeeLogin = {
+            employee_id: loginFormData.employee_id,
+            password: loginFormData.password
+        };
+
+        // Specfifies what kind of request it is
+        const requestOptions = {
+            method: 'POST',             // POST = insert request
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newEmployeeLogin)     
         }
+
+        fetch('http://localhost:3001/employeeLogin/info', requestOptions)
+        .then(res => res.json())
+        .then(json => setEmployeeLoginData(json))
+        .then(json => sessionStorage.setItem("employeeSession", json));
+        //.then(window.location.replace('/ServerHome'));
+        console.log(employeeLoginData);
     }
 
     useEffect(() => {
@@ -67,21 +105,19 @@ function Home(){
         <div class="employeeBox">
             Employee Login
 
-            <form>
+            <form onSubmit={handleEmployeeLogin}>
                 <div class="form-group mt-5">
                     <label for="employee_id">Employee ID</label>
-                    <input type="number" class="form-control border-gray border-2 w-60" name="employee_id"></input>
+                    <input type="number" class="form-control border-gray border-2 w-60" name="employee_id" onChange={handleLoginFormChange}></input>
                 </div>
 
                 <div class="form-group">
                     <label for="password" class="mx-3">Password</label>
-                    <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password"></input>
+                    <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password" onChange={handleLoginFormChange}></input>
                 </div>
-            </form>
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button> 
+            </form>           
 
-            <a href="Checkout">
-                <button onClick={ (e) => handleEmployeeLogin(e)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>            
-            </a>
 
         </div>
 
