@@ -66,7 +66,7 @@ function SalesReport() {
 
     return (
         <div className="">
-            <h1 class="text-6xl"> Sales Report </h1>
+            <button className = "btnSalesReport">Sales Report</button>
             <form onSubmit={handleAddFormSubmit}>
                     <input 
                         class="border-gray border-2 w-60"
@@ -85,7 +85,7 @@ function SalesReport() {
                         onChange={handleAddFormChange}
                     />
                     
-                    <button type="submit" class="addInventoryButton">Submit time period</button>
+                    <button type="submit" class="btnSubmitTimePeriod">Submit time period</button>
                 </form>
 
 

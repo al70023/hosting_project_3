@@ -39,11 +39,13 @@ function RestockReport() {
 
     return (
         <div className="">
-            <h1 class="text-xl"> Restock Items </h1>
+            <button className = "btnRestock">Restock</button>
             <form onSubmit={handleAddFormSubmit}>
                 
-                <button type="submit" class="addInventoryButton">Restock all items</button>
+                <button type="submit" class="btnRestockItems">Restock All Items</button>
+                
             </form>
+            <br></br>
 
             <div class="w-full bg-blue-100">
                 <form>

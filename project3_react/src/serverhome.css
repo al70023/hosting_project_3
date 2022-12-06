@@ -2,7 +2,7 @@
     background-color: #E51636; /* Green */
     border-radius: 10px;
     font-family: Verdana, sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     border: none;
     color: white;
     width: 450px;
@@ -16,7 +16,7 @@
     background-color:  #E51636; /* Green */
     border-radius: 10px;
     font-family: Verdana, sans-serif;
-    font-size: 45px;
+    font-size: 40px;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -46,7 +46,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .btnThree {
@@ -64,7 +64,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .btnFour {
@@ -82,7 +82,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .btnFive  {

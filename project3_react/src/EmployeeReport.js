@@ -20,8 +20,7 @@ function EmployeeReport() {
 
     return (
         <div className="">
-            <h1 class="text-6xl"> Employee Report </h1>
-
+             <button className = "btnSalesReport">Employee Report</button>
 
             <div class="w-full bg-blue-100 mt-10">
                 <form>

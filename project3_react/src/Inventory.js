@@ -176,12 +176,9 @@ function Inventory() {
 
     return(
         <div className = "inventory">
-            <h1 class="text-6xl mb-9 mt-9"> Inventory </h1>
-
-            
+            <button className = "btnInventory">Inventory</button>
 
             <div className = "inventoryTable">
-                <h2>Add a New Inventory Item</h2>
                 <form onSubmit={handleAddFormSubmit}>
                     <input 
                         class="border-gray border-2"
