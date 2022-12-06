@@ -70,6 +70,7 @@ function Home() {
         .then(json => sessionStorage.setItem("employeeSession", json));
         //.then(window.location.replace('/ServerHome'));
         console.log(employeeLoginData);
+        console.log(sessionStorage.getItem("employeeSession"));
     }
 
     useEffect(() => {
