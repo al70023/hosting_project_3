@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect, Fragment } from 'react';
+import {Link} from 'react-router-dom';
 import MenuItemReadOnlyRow from './menuItemComponents/MenuItemReadOnlyRow';
 import MenuItemEditableRow from './menuItemComponents/MenuItemEditableRow';
 import './MenuItems.css';
@@ -162,6 +163,15 @@ function MenuItems() {
     return(
         <div className = "menuItems">
             <button className = "btnMenuItems">Menu Items</button>
+            
+            <div>
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>
+                <button className = "backButton"> Back</button>
+            </a>
+            </Link>
+            </div>
+
             <div className = "menuItemTable">
                 <form onSubmit={handleAddFormSubmit}>
                     <input 

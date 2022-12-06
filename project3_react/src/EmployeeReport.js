@@ -1,6 +1,7 @@
 import React from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
 import './EmployeeReport.css';
+import {Link} from 'react-router-dom';
 
 function EmployeeReport() {
 
@@ -21,6 +22,14 @@ function EmployeeReport() {
     return (
         <div className="">
              <button className = "btnSalesReport">Employee Report</button>
+
+            <div>
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>
+                <button className = "backButton">Back</button>
+            </a>
+            </Link>
+            </div>
 
             <div class="w-full bg-blue-100 mt-10">
                 <form>

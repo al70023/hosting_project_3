@@ -11,11 +11,11 @@ const InventoryReadOnlyRow = ({ inventory, handleEditClick, handleDeleteClick })
             <td>{inventory.received_date}</td>
             <td>{inventory.stored_location}</td>
             <td>
-                <button type="button" class="editButton" onClick={(event) => handleEditClick(event, inventory)}>Edit</button>
+                <button type="button" class="editInventoryButton" onClick={(event) => handleEditClick(event, inventory)}>Edit</button>
             </td>
 
             { <td>
-                <button type="button" class="deleteButton" onClick={() => handleDeleteClick(inventory.item_id)}>Delete</button>
+                <button type="button" class="deleteInventoryButton" onClick={() => handleDeleteClick(inventory.item_id)}>Delete</button>
             </td> }
         </tr>
     )

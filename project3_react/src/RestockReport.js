@@ -1,5 +1,6 @@
 import React from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
+import {Link} from 'react-router-dom';
 import './RestockReport.css';
 
 function RestockReport() {
@@ -39,12 +40,23 @@ function RestockReport() {
 
     return (
         <div className="">
+
+
             <button className = "btnRestock">Restock</button>
             <form onSubmit={handleAddFormSubmit}>
                 
                 <button type="submit" class="btnRestockItems">Restock All Items</button>
                 
             </form>
+
+            <div>
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>
+                <button className = "backButton">Back</button>
+            </a>
+            </Link>
+            </div>
+
             <br></br>
 
             <div class="w-full bg-blue-100">

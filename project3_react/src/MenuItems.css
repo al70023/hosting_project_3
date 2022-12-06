@@ -27,9 +27,11 @@
     position:relative;
     bottom:50px;
 }
-  .deleteButton {
+  .deleteMenuItemButton {
     border: none;
+    border-radius: 10px;
     background-color: #E51636;
+    color:white;
     padding: 15px;
     text-align: center;
     text-decoration: none;
@@ -39,9 +41,11 @@
     cursor: pointer;
   }
 
-  .saveButton {
+  .saveMenuItemButton {
     border: none;
+    border-radius: 10px;
     background-color: #E51636;
+    color:white;
     padding: 15px;
     text-align: center;
     text-decoration: none;
@@ -51,9 +55,11 @@
     cursor: pointer;
   }
 
-  .editButton {
+  .editMenuItemButton {
     border: none;
+    border-radius: 10px;
     background-color: #E51636;
+    color:white;
     padding: 15px;
     text-align: center;
     text-decoration: none;
@@ -78,17 +84,6 @@
     cursor: pointer;
   }
 
-  .deleteButton {
-    border: none;
-    background-color: #E51636;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 5px;
-    cursor: pointer;
-  }
 
 
 
