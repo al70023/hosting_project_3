@@ -1,13 +1,28 @@
 import React from 'react';
-import './serverhome.css';
-import './CustomerHome.css'
+import { useState } from 'react';
+import jwt_decode from 'jwt-decode'
+import './CustomerHome.css';
 
 function CustomerHome(){
+
+    const [ user, setUser ] = useState(sessionStorage.getItem("googleSession") || {});
+
+    function handleSignOut(event) {
+        sessionStorage.clear();
+        setUser({});
+        window.location.replace('/');
+    }
+
     return (
 
         <div >
             <div class="homeTopContainer">
                 <button className = "btnCustomerHome">Customer Home</button>
+                <p class = "googleSession">
+                    Hello, {jwt_decode(sessionStorage.getItem("googleSession")).given_name}
+                </p>
+                <button class="btnLogOut" onClick={ (e) => handleSignOut(e)}>Log Out</button>
+
                 <a href="/EntreeItems">
                     <button className = "btnOne">Entrees</button>
                 </a>

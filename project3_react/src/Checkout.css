@@ -63,6 +63,24 @@
     height:50px;
     width:75px;
     position: relative;
-    left: 625px;
-    bottom: 80px;
+    left: 640px;
+    bottom: -20px;
+  }
+  
+  .employeeSession {
+    background-color:  white; /* Green */
+    border-radius: 10px;
+    font-family: Verdana, sans-serif;
+    border: solid;
+    color: black;
+    padding: 15px 32px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 250px;
+    height: 90px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
   }

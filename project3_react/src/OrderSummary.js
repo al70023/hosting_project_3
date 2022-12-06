@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import './OrderSummary.css';
 
 function OrderSummary() {
 
@@ -15,6 +16,11 @@ function OrderSummary() {
     useEffect(() => {
         fetchOrderSummary();
     }, []);
+
+    function handleSignOut(event) {
+        sessionStorage.clear();
+        window.location.replace('/');
+    }
 
     return (
         <div className="OrderSummary">
@@ -43,6 +49,7 @@ function OrderSummary() {
                     </li>
                 </ul>
             ))}
+            <button class ="btnHome" onClick={ (e) => handleSignOut(e)}>Return Home</button>
         </div>
     );
 }

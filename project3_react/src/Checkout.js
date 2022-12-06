@@ -2,9 +2,9 @@ import React from 'react';
 import { useState, useMemo, useEffect } from 'react';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import { useNavigate} from "react-router-dom";
-
+import jwt_decode from 'jwt-decode';
 import './Checkout.css';
-import GoogleMaps from './GoogleMaps';
+
 
 const Back = () => {
   let navigate = useNavigate();
@@ -21,7 +21,28 @@ function Checkout() {
 
     const [totalCost, setTotalCost] = useState(parseFloat(sessionStorage.getItem("orderCost")) || 0.00);
 
-    // Handling when a user clicks the Add a New Menu Item button
+    // Data state variable for the data
+    const [checkoutData, setCheckoutData] = useState({
+        cust_name: '',
+        credit_card_num: '',
+    })
+    const handleCheckoutFormChange = (event) => {
+        event.preventDefault();
+
+        // Will get the name attribute for each of the inputs in the form and assign it to fieldName
+        const fieldName = event.target.getAttribute('name');
+        
+        // Will get the actual value that the user inputted
+        const fieldValue = event.target.value;
+
+        // Make a copy of the form data
+        const newCheckoutData = {...checkoutData};
+        newCheckoutData[fieldName] = fieldValue;
+
+        setCheckoutData(newCheckoutData);
+    }
+
+    // Handling when a user clicks Submit Order
     const handleSubmitOrder = (event) => {
         event.preventDefault();
 
@@ -30,6 +51,11 @@ function Checkout() {
         var itemsString = "";
 
         var totalCost = parseFloat(sessionStorage.getItem("orderCost"));
+
+        if (items === null) {
+            alert("Failed to place order: No items in cart.");
+            return;
+        }
 
         // loop through current order for each item
         for (var i = 0; i < items.length; i++) {
@@ -43,15 +69,26 @@ function Checkout() {
         const currDate = new Date().toLocaleDateString();
         const currTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
 
+        var id = 5;
+        if (JSON.parse(sessionStorage.getItem("employeeSession")) === null) {
+          id = 5;
+        } else {
+          id = JSON.parse(sessionStorage.getItem("employeeSession")).employee_id;
+        }
+
+        if (checkoutData.cust_name === '') {
+          checkoutData.cust_name = jwt_decode(sessionStorage.getItem("googleSession")).given_name;
+        }
+
         // Assign the values from the order to a new order instance
         const newOrder = {
             time: currDate + " " + currTime, 
-            cust_name: "default", 
+            cust_name: checkoutData.cust_name, 
             items_ordered: itemsIDs, 
             items_ordered_string: itemsString, 
             total_cost: totalCost, 
-            credit_card_num: "1111111111111111", 
-            employee_id: "1" 
+            credit_card_num: checkoutData.credit_card_num, 
+            employee_id: id
         };
 
         // Specfifies what kind of request it is
@@ -90,6 +127,7 @@ function Checkout() {
         setItemsOrdered([...items, dessertItem])
         setTotalCost(totalCost);
     }
+    
 
     const containerStyle = {
         width: '1000px',
@@ -150,6 +188,18 @@ function Checkout() {
     return (
         <div>
             <div class="CheckoutPage">
+
+            {(JSON.parse(sessionStorage.getItem("employeeSession"))) != null ?
+                (<p class = "employeeSession">
+                    Employee: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_name}
+                    <br/>
+                    ID: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_id}
+                </p>
+                ) : (<p class = "googleSession">
+                    Hello, {jwt_decode(sessionStorage.getItem("googleSession")).given_name}
+                </p>)
+              }    
+
             <Back/>
                 <p><br></br></p>
                 <button className = "btnCheckoutItem">Checkout Page</button>
@@ -165,8 +215,35 @@ function Checkout() {
                         )}
                     </ol>}
                 <p><br></br></p>
-                <button className = "btnCheckoutSubmit" type="submit" onClick={handleSubmitOrder}>Submit Order</button>
-
+                <form onSubmit={handleSubmitOrder}>
+                {sessionStorage.getItem("googleSession") != null ? 
+                  (<input 
+                  class="border-gray border-2"
+                  type="text"
+                  name="cust_name"
+                  required="required"
+                  onChange={handleCheckoutFormChange}
+                  value={jwt_decode(sessionStorage.getItem("googleSession")).given_name}
+                  />) : (<input 
+                    class="border-gray border-2"
+                    type="text"
+                    name="cust_name"
+                    required="required"
+                    placeholder="Enter customer name..."
+                    onChange={handleCheckoutFormChange}
+                />)
+                }
+                    <input 
+                        class="border-gray border-2"
+                        type="text"
+                        name="credit_card_num"
+                        required="required"
+                        placeholder="Enter credit card..."
+                        onChange={handleCheckoutFormChange}
+                    />
+                    <br/>
+                    <button className = "btnCheckoutSubmit" type="submit">Submit Order</button>
+                </form>
             </div>
 
             <br/>

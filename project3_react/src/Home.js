@@ -9,7 +9,7 @@ function Home() {
 
     const [ user, setUser ] = useState(sessionStorage.getItem("googleSession") || {});
 
-    const [ employeeLoginData, setEmployeeLoginData ] = useState(sessionStorage.getItem("employeeSession") || []);
+    useState(sessionStorage.getItem("employeeSession") || {});
 
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
@@ -18,6 +18,7 @@ function Home() {
         sessionStorage.setItem("googleSession", response.credential);
         setUser(userObject);
         document.getElementById("signInDiv").hidden = true;
+        window.location.replace('/CustomerHome');
     }
 
     function handleSignOut(event) {
@@ -64,13 +65,20 @@ function Home() {
             body: JSON.stringify(newEmployeeLogin)     
         }
 
-        fetch('http://localhost:3001/employeeLogin/info', requestOptions)
-        .then(res => res.json())
-        .then(json => setEmployeeLoginData(json))
-        .then(json => sessionStorage.setItem("employeeSession", json));
-        //.then(window.location.replace('/ServerHome'));
-        console.log(employeeLoginData);
-        console.log(sessionStorage.getItem("employeeSession"));
+        async function fetchLogin(requestOptions) {
+            const response = await fetch('http://localhost:3001/employeeLogin/info', requestOptions);
+            const data = await response.json();
+            sessionStorage.setItem("employeeSession", JSON.stringify(data[0]));
+
+            if (sessionStorage.getItem("employeeSession") === "undefined") { 
+                alert("Invalid employee login. Please try again.");
+            } else if (JSON.parse(sessionStorage.getItem("employeeSession")).position === 2) {
+                window.location.replace('/ManagerHome');
+            } else {
+                window.location.replace('/ServerHome');
+            }
+        }
+        fetchLogin(requestOptions);
     }
 
     useEffect(() => {
@@ -109,21 +117,17 @@ function Home() {
             <form onSubmit={handleEmployeeLogin}>
                 <div class="form-group mt-5">
                     <label for="employee_id">Employee ID</label>
-                    <input type="number" class="form-control border-gray border-2 w-60" name="employee_id" onChange={handleLoginFormChange}></input>
+                    <input type="number" style={{color:'black'}} class="form-control border-gray border-2 w-60" name="employee_id" onChange={handleLoginFormChange}></input>
                 </div>
 
                 <div class="form-group">
                 <br></br>
                     <label for="password" class="mx-3">Password</label>
-                    <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password" onChange={handleLoginFormChange}></input>
+                    <input type="password" style={{color:'black'}} class="form-control border-gray border-2 w-60 px-8" name="password" onChange={handleLoginFormChange}></input>
                 </div>
                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button> 
             </form>           
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6a1013a739e61a223916fbd4d55becb1acc97f89
         </div>
 
         <div class="customerBox">
@@ -132,10 +136,8 @@ function Home() {
             <div id="signInDiv"></div>
             { Object.keys(user).length != 0 && 
                 <div>
-                    <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
-                    <img src={user.picture}></img>
                     <h3>{user.name}</h3>
-                    {console.log(user)}
+                    <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
                 </div>
             }
         

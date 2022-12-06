@@ -1,5 +1,6 @@
 import React from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
+import jwt_decode from 'jwt-decode';
 import './DrinkItems.css';
 import { useNavigate} from "react-router-dom";
 
@@ -92,6 +93,18 @@ function DrinkItems() {
 
             <div className = "drinkItemTable">
                 <button className = "btnDrinkItem">Drink Items</button>
+
+                {(JSON.parse(sessionStorage.getItem("employeeSession"))) != null ?
+                (<p class = "employeeSession">
+                    Employee: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_name}
+                    <br/>
+                    ID: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_id}
+                </p>
+                ) : (<p class = "googleSession">
+                    Hello, {jwt_decode(sessionStorage.getItem("googleSession")).given_name}
+                </p>)
+                }     
+
                 <Back/>
                 <p><br></br></p>
                 <form>

@@ -50,6 +50,13 @@ function ManagerHome(){
         </a>
         </Link>
         </div>
+        <div class="mt-5">
+        <Link activeClassName="active" to={'/ServerHome'}>
+        <a>
+            <button className = "btnViewItem"> Server Portal</button>
+        </a>
+        </Link>
+        </div> 
     </div>
     );
 }
