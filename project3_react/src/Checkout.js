@@ -1,9 +1,19 @@
 import React from 'react';
 import { useState, useMemo, useEffect } from 'react';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+import { useNavigate} from "react-router-dom";
 
 import './Checkout.css';
 import GoogleMaps from './GoogleMaps';
+
+const Back = () => {
+  let navigate = useNavigate();
+  return (
+      <>
+        <button  className = "btnBackCheckout" onClick={() => navigate(-1)}>Back</button> 
+      </>
+  );
+};
 
 function Checkout() {
 
@@ -140,6 +150,7 @@ function Checkout() {
     return (
         <div>
             <div class="CheckoutPage">
+            <Back/>
                 <p><br></br></p>
                 <button className = "btnCheckoutItem">Checkout Page</button>
                 <h1>Orders (Total is: {totalCost.toFixed(2)})</h1>

@@ -74,12 +74,11 @@ function Home(){
                 </div>
 
                 <div class="form-group">
+                <br></br>
                     <label for="password" class="mx-3">Password</label>
                     <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password"></input>
                 </div>
             </form>
-
-              
 
         </div>
 
