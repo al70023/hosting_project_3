@@ -43,6 +43,11 @@ function ManagerHome(){
         </a>
         </Link>
         </div>
+        <div class="mt-5">
+        <Link activeClassName="active" to={'/ExcessReport'}>
+        <a class="font-bold rounded bg-red-300 text-lg">View Excess Report</a>
+        </Link>
+        </div>
     </div>
     );
 }

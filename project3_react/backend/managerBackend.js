@@ -141,6 +141,16 @@ const viewEmployeeReport = (req, res) => {
     })
 }
 
+const viewExcessReport = (req, res) => {
+    const {date} = req.body
+    pool.query("select * from inventory where current_quantity>0.9*start_quantity AND received_date<'10/03/22'", (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
 
 
 module.exports = {
@@ -155,5 +165,6 @@ module.exports = {
     viewRestockReport,
     Restock,
     viewSalesReport,
-    viewEmployeeReport
+    viewEmployeeReport,
+    viewExcessReport
 } 
