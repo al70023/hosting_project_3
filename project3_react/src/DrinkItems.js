@@ -98,7 +98,7 @@ function DrinkItems() {
                             <tr>
                                 <td>{drinkItem.item_name}</td>
                                 <td>{drinkItem.item_price}</td>
-                                <td><button className = "addButton" type="button" onClick={() => addItem(drinkItem)}>Add Item</button></td>
+                                <td><button className = "addDrinkButton" type="button" onClick={() => addItem(drinkItem)}>Add Item</button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -115,14 +115,14 @@ function DrinkItems() {
                 <ol>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                     <li>
-                        {item.item_name}    {item.item_price}  <button className = "removeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                        {item.item_name}    {item.item_price}  <button className = "removeDrinkButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                         <p><br></br></p>
                     </li>
                 )}
             </ol>}
             
             <a href="Checkout">
-                <button className = "checkoutButton">Checkout</button>
+                <button className = "checkoutDrinkButton">Checkout</button>
             </a>
             
         </div>

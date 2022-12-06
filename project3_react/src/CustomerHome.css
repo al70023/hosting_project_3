@@ -1,0 +1,13 @@
+.btnCustomerHome {
+    background-color: #E51636; /* Green */
+    border-radius: 10px;
+    font-family: Verdana, sans-serif;
+    font-size: 50px;
+    border: none;
+    color: white;
+    width: 450px;
+    height: 150px;
+    position:relative;
+    left: 450px;
+    bottom:50px;
+}

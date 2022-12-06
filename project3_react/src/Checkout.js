@@ -1,6 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+
 import './Checkout.css';
+import GoogleMaps from './GoogleMaps';
 
 function Checkout() {
 
@@ -78,21 +81,74 @@ function Checkout() {
         setTotalCost(totalCost);
     }
 
+    const containerStyle = {
+        width: '1000px',
+        height: '800px'
+      };
+      
+      const center = {
+        lat: 30.607,
+        lng: -96.34
+      };
+      
+      const store1 = {
+        lat: 30.61232093072571, 
+        lng: -96.34130677030306
+      }
+      
+      const store2 = {
+        lat: 30.61722541908507, 
+        lng: -96.34418756933081
+      }
+      
+      const store3 = {
+        lat: 30.585563142372333, 
+        lng: -96.32393623545724
+      }
+      
+      const store4 = {
+        lat: 30.63115416799953, 
+        lng: -96.37920402164322
+      }
+      
+      const store5 = {
+        lat: 30.61651557337937, 
+        lng: -96.31979326149934
+      }
+      
+      const store6 = {
+        lat: 30.659799446267183, 
+        lng: -96.3309947426391 
+      }
+      
+      const store7 = {
+        lat: 30.562050900698093, 
+        lng: -96.2589382151058
+      }
+
+      useEffect(() => {
+        document.getElementById("mapDiv").hidden = true;
+        document.getElementById("buttonDiv").hidden = false;
+      }, []);
+    
+
+      function handleStoreLocator(event) {
+        document.getElementById("buttonDiv").hidden = true;
+        document.getElementById("mapDiv").hidden = false;
+      }
 
     return (
         <div>
             <div class="CheckoutPage">
                 <p><br></br></p>
                 <button className = "btnCheckoutItem">Checkout Page</button>
-                <p><br></br></p>
-                <p><br></br></p>
                 <h1>Orders (Total is: {totalCost.toFixed(2)})</h1>
                 <br></br>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")) != null &&
                     <ol>
                         {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                             <li>
-                                {item.item_name}    {item.item_price}  <button className = "removeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                                {item.item_name}    {item.item_price}  <button className = "removeCheckoutButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                                 <p><br></br></p>
                             </li>
                         )}
@@ -101,6 +157,26 @@ function Checkout() {
                 <button className = "btnCheckoutSubmit" type="submit" onClick={handleSubmitOrder}>Submit Order</button>
 
             </div>
+
+            <br/>
+            <br/>
+            <center>
+            <div id="mapDiv">
+            <LoadScript googleMapsApiKey="AIzaSyDJVa-4NwPfYayx3nuiMW5EMMP1-SXwmdU">
+                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12.9}>
+                    { /* Child components, such as markers, info windows, etc. */ }
+                    <Marker position={store1} />
+                    <Marker position={store2} />
+                    <Marker position={store3} />
+                    <Marker position={store4} />
+                    <Marker position={store5} />
+                    <Marker position={store6} />
+                    <Marker position={store7} />
+                </GoogleMap>
+            </LoadScript>
+            </div>
+            <button className = "btnStoreLocator" id="buttonDiv" onClick={ (e) => handleStoreLocator(e)}>Store Locator</button>
+            </center>
         </div>
     );
 }

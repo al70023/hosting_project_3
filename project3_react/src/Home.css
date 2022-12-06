@@ -1,0 +1,38 @@
+/* .fullPage {
+    background-color: #E51636;
+} */
+
+.homeLogo {
+    width: 40%;
+    height: 20%;
+}
+
+div.employeeBox{
+    border: 1px #E51636;
+    border-style: solid;
+    background-color: #E51636;
+    position:relative;
+    left: 50px;
+    top: 119px;
+    width: 600px;
+    height: 300px;
+    padding: 50px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    
+}
+
+div.customerBox{
+    border: 1px #E51636;
+    border-style: solid;
+    background-color: #E51636;
+    position:relative;
+    left: 100px;
+    width: 600px;
+    height: 300px;
+    padding: 50px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 10px;
+}
