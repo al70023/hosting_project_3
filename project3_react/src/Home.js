@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import jwt_decode from 'jwt-decode'
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import { gapi } from 'gapi-script';
 import './Home.css';
 
 import './App.css';
@@ -62,8 +60,10 @@ function Home(){
     <body class="homeTopContainer">
         <div>
         <center><img class="homeLogo" src="http://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx" alt="Chick-fil-A logo"/></center>
+        Welcome to Chick-fil-A!
         </div>
 
+        <center>
         <div class="employeeBox">
             Employee Login
 
@@ -100,6 +100,9 @@ function Home(){
         
 
         </div>
+
+        </center>
+        
 
         <img class="h-64 absolute top-50 right-0"src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Stories%20Images/2019/07/Steve%20robinson/cows.jpg?h=960&w=1440&la=en"/>
 

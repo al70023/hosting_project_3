@@ -7,8 +7,10 @@ import GoogleTranslate from './GoogleTranslate';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <App />
+    <label>Google Translate</label>
     <GoogleTranslate />
+    <App />
+    
   </div>
 );
 

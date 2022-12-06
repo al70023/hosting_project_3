@@ -1,12 +1,16 @@
 import React from 'react';
 import './ServerHome.css';
+<<<<<<< HEAD
+=======
+import './CustomerHome.css'
+>>>>>>> 9b095193796f40572fcc295945feb5869f1fe4f4
 
 function CustomerHome(){
     return (
 
         <div >
             <div class="homeTopContainer">
-                <button className = "btnServerHome">Customer Home</button>
+                <button className = "btnCustomerHome">Customer Home</button>
                 <a href="/EntreeItems">
                     <button className = "btnOne">Entrees</button>
                 </a>

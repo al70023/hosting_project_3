@@ -161,12 +161,8 @@ function MenuItems() {
 
     return(
         <div className = "menuItems">
-            <h1 class="text-6xl mb-9 mt-9"> Menu Items </h1>
-
-            
-
+            <button className = "btnMenuItems">Menu Items</button>
             <div className = "menuItemTable">
-                <h2>Add a New Menu Item</h2>
                 <form onSubmit={handleAddFormSubmit}>
                     <input 
                         class="border-gray border-2"

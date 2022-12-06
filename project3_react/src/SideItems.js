@@ -80,7 +80,7 @@ function SideItems() {
         <div className = "sideItems">
 
             <div className = "sideItemTable">
-                <button className = "btnDrinkItem">Side Items</button>
+                <button className = "btnSideItem">Side Items</button>
                 <p><br></br></p>
                 <form>
                 <table>
@@ -97,7 +97,7 @@ function SideItems() {
                             <tr>
                                 <td>{sideItem.item_name}</td>
                                 <td>{sideItem.item_price}</td>
-                                <td><button className = "addButton" type="button" onClick={() => addItem(sideItem)}>Add Item</button></td>
+                                <td><button className = "addSideButton" type="button" onClick={() => addItem(sideItem)}>Add Item</button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -114,14 +114,14 @@ function SideItems() {
                 <ol>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                     <li>
-                        {item.item_name}    {item.item_price}  <button className = "removeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                        {item.item_name}    {item.item_price}  <button className = "removeSideButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                         <p><br></br></p>
                     </li>
                 )}
             </ol>}
 
             <a href="Checkout">
-                <button className = "checkoutButton">Checkout</button>
+                <button className = "checkoutSideButton">Checkout</button>
             </a>
             
         </div>

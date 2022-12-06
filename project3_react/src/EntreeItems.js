@@ -99,7 +99,7 @@ function EntreeItems() {
                                 <tr>
                                     <td name="name">{entreeItem.item_name}</td>
                                     <td name="price">{entreeItem.item_price}</td>
-                                    <td><button className = "addButton" type="button" onClick={() => addItem(entreeItem)}>Add Item</button></td>
+                                    <td><button className = "addEntreeButton" type="button" onClick={() => addItem(entreeItem)}>Add Item</button></td>
                                 </tr>
                             ))}
                         </tbody>
@@ -116,14 +116,14 @@ function EntreeItems() {
                 <ol>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                     <li>
-                        {item.item_name}    {item.item_price}  <button className = "removeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                        {item.item_name}    {item.item_price}  <button className = "removeEntreeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                         <p><br></br></p>
                     </li>
                 )}
             </ol>}
 
         <a href="Checkout">
-            <button className = "checkoutButton">Checkout</button>
+            <button className = "checkoutEntreeButton">Checkout</button>
         </a>
 
         </div>

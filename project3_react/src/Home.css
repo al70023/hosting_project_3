@@ -1,7 +1,6 @@
-.fullPage {
+/* .fullPage {
     background-color: #E51636;
-
-}
+} */
 
 .homeLogo {
     width: 40%;
@@ -9,26 +8,31 @@
 }
 
 div.employeeBox{
-    border: 1px white;
+    border: 1px #E51636;
     border-style: solid;
-    background-color: white;
-    width: 40%;
-    height: 50%;
+    background-color: #E51636;
+    position:relative;
+    left: 50px;
+    top: 119px;
+    width: 600px;
+    height: 300px;
     padding: 50px;
     margin: 20px;
-    border-collapse: collapse;
+    display: inline-block;
     border-radius: 10px;
     
 }
 
 div.customerBox{
-    border: 1px white;
+    border: 1px #E51636;
     border-style: solid;
-    background-color: white;
-    width: 40%;
-    height: 50%;
+    background-color: #E51636;
+    position:relative;
+    left: 100px;
+    width: 600px;
+    height: 300px;
     padding: 50px;
     margin: 20px;
-    border-collapse: collapse;
+    display: inline-block;
     border-radius: 10px;
 }
