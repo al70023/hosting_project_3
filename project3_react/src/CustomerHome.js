@@ -1,5 +1,5 @@
 import React from 'react';
-import './serverhome.css';
+import './ServerHome.css';
 
 function CustomerHome(){
     return (

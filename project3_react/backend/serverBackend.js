@@ -74,6 +74,18 @@ const viewOrderSummary = (req, res) => {
     })
 }
 
+const employeeLogin = (req, res) => {
+    const {employee_id, password} = req.body
+
+    pool.query('SELECT * from employees WHERE employee_id=$1 AND password=$2',
+    [employee_id, password], (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
 module.exports = {
     viewEntreeItems,
     viewSideItems,
@@ -81,5 +93,6 @@ module.exports = {
     viewDessertItems,
     insertOrder,
     viewOrderSummary,
+    employeeLogin,
     pool
 } 

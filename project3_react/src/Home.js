@@ -26,6 +26,16 @@ function Home(){
         document.getElementById("signInDiv").hidden = false;
     }
 
+    function handleEmployeeLogin(event) {
+        if () {
+            // Add the new menu item into the table
+            fetch('http://localhost:3001/employeeLogin/data', requestOptions)
+            .then(res => res.json())
+            // between this check the raw data of the employee 
+            .then(window.location.replace('/OrderSummary'));
+        }
+    }
+
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
@@ -57,8 +67,7 @@ function Home(){
         <div class="employeeBox">
             Employee Login
 
-            <form action="/ServerHome" method="POST">
-
+            <form>
                 <div class="form-group mt-5">
                     <label for="employee_id">Employee ID</label>
                     <input type="number" class="form-control border-gray border-2 w-60" name="employee_id"></input>
@@ -68,9 +77,11 @@ function Home(){
                     <label for="password" class="mx-3">Password</label>
                     <input type="password" class="form-control border-gray border-2 w-60 px-8" name="password"></input>
                 </div>
-
-                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>
             </form>
+
+            <a href="Checkout">
+                <button onClick={ (e) => handleEmployeeLogin(e)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button>            
+            </a>
 
         </div>
 
