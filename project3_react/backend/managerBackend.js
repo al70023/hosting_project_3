@@ -44,7 +44,16 @@ const updateMenuItem = (req, res) => {
 }
 
 const deleteMenuItem = (req, res) => {
-    const {item_id} = req.body
+    //const {item_id} = req.body
+
+    const item_id = parseInt(req.params.item_id)
+
+    pool.query('DELETE FROM menu_items_have_inventory WHERE item_id = $1',
+    [item_id], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
 
     pool.query('DELETE FROM menu_items WHERE item_id = $1',
     [item_id], (error, results) => {
@@ -86,7 +95,17 @@ const updateInventory = (req, res) => {
 }
 
 const deleteInventory = (req, res) => {
-    const {inventory_id} = req.body
+    //const {inventory_id} = req.body
+
+    const inventory_id = parseInt(req.params.inventory_id)
+
+    pool.query('DELETE FROM menu_items_have_inventory WHERE inventory_id = $1',
+    [inventory_id], (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+
 
     pool.query('DELETE FROM inventory WHERE inventory_id = $1',
     [inventory_id], (error, results) => {

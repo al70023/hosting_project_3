@@ -2,7 +2,7 @@
     width: 1400px;
     height:1400px;
     margin-left: 20px;
-    border: 1px solid;
+    border: 3px solid;
     border-collapse: collapse;
   }
 
@@ -26,7 +26,8 @@
   width: 350px;
   height: 100px;
   position:relative;
-  bottom: 60px;
+  left:50px;
+  bottom: 40px;
   
 }
 
@@ -77,4 +78,54 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.btnBackDrink {
+  border: none;
+  border-radius: 10px;
+  background-color: #E51636;
+  font-family: Verdana, sans-serif;
+  color:white;
+  padding: 15px;
+  height:50px;
+  width:75px;
+  position: relative;
+  left: 460px;
+  bottom: 10px;
+}
+
+.employeeSession {
+  background-color:  white; /* Green */
+  border-radius: 10px;
+  font-family: Verdana, sans-serif;
+  border: solid;
+  color: black;
+  padding: 15px 32px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 250px;
+  height: 90px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.googleSession {
+  background-color:  white; /* Green */
+  border-radius: 10px;
+  font-family: Verdana, sans-serif;
+  border: solid;
+  color: black;
+  padding: 15px 32px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 250px;
+  height: 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
 }

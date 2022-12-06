@@ -89,8 +89,8 @@ const InventoryEditableRow = ({ inventory, editFormData, handleEditFormChange, h
             </td>
 
             <td>
-                <button type="submit" class="saveButton">Save</button>
-                <button type="submit" class="deleteButton" onClick={handleCancelClick}>Cancel</button>
+                <button type="submit" class="saveInventoryButton">Save</button>
+                <button type="submit" class="cancelInventoryButton" onClick={handleCancelClick}>Cancel</button>
             </td>
         </tr>
     )

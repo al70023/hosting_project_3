@@ -2,7 +2,7 @@
     background-color: #E51636; /* Green */
     border-radius: 10px;
     font-family: Verdana, sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     border: none;
     color: white;
     width: 450px;
@@ -11,3 +11,35 @@
     left: 450px;
     bottom:50px;
 }
+
+.googleSession {
+    background-color:  white; /* Green */
+    border-radius: 10px;
+    font-family: Verdana, sans-serif;
+    border: solid;
+    color: black;
+    padding: 15px 32px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.btnLogOut {
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    font-family: Verdana, sans-serif;
+    color:white;
+    padding: 15px;
+    height:50px;
+    width:100px;
+    position: absolute;
+    right: 75px;
+    top: 90px;
+  }

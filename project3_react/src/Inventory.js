@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect, Fragment } from 'react';
+import {Link} from 'react-router-dom';
 import InventoryReadOnlyRow from './inventoryComponents/InventoryReadOnlyRow';
 import InventoryEditableRow from './inventoryComponents/InventoryEditableRow';
 import './Inventory.css';
@@ -149,17 +150,17 @@ function Inventory() {
     const handleDeleteClick = (inventory_id) => {
         //DELETE request using fetch with error handling
         fetch(`http://localhost:3001/inventory/${inventory_id}`, { method: 'DELETE' })
-            //.then(window.location.reload(false))
+            .then(window.location.reload(false))
             .catch(error => {
                 console.error('There was an error!', error);
         });
 
-        const newInventory = [...inventoryData];
-        const index = inventoryData.findIndex((inventory) => inventory.inventory_id === inventory_id);
+        // const newInventory = [...inventoryData];
+        // const index = inventoryData.findIndex((inventory) => inventory.inventory_id === inventory_id);
 
-        newInventory.splice(index, 1);
+        // newInventory.splice(index, 1);
 
-        setInventoryData(newInventory);
+        // setInventoryData(newInventory);
     }
 
     // VIEWING ALL INVENTORY
@@ -176,12 +177,17 @@ function Inventory() {
 
     return(
         <div className = "inventory">
-            <h1 class="text-6xl mb-9 mt-9"> Inventory </h1>
+            <button className = "btnInventory">Inventory</button>
 
-            
+            <div>
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>
+                <button className = "backInventoryButton"> Back</button>
+            </a>
+            </Link>
+            </div>
 
             <div className = "inventoryTable">
-                <h2>Add a New Inventory Item</h2>
                 <form onSubmit={handleAddFormSubmit}>
                     <input 
                         class="border-gray border-2"
@@ -246,7 +252,6 @@ function Inventory() {
                             <th>Spoil Date</th>
                             <th>Received Date</th>
                             <th>Stored Location</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>

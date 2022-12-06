@@ -1,7 +1,17 @@
 import React, { Component, createContext } from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
+import jwt_decode from 'jwt-decode';
 import './EntreeItems.css';
+import { useNavigate} from "react-router-dom";
 
+const Back = () => {
+    let navigate = useNavigate();
+    return (
+        <>
+          <button className = "btnBackEntree" onClick={() => navigate(-1)}>Back</button> 
+        </>
+    );
+};
 
 
 function EntreeItems() {
@@ -83,6 +93,19 @@ function EntreeItems() {
 
             <div className="entreeItemTable">
                 <button className = "btnEntreeItem">Entree Items</button>
+
+                {(JSON.parse(sessionStorage.getItem("employeeSession"))) != null ?
+                (<p class = "employeeSession">
+                    Employee: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_name}
+                    <br/>
+                    ID: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_id}
+                </p>
+                ) : (<p class = "googleSession">
+                    Hello, {jwt_decode(sessionStorage.getItem("googleSession")).given_name}
+                </p>)
+                }     
+
+                <Back/>
                 <p><br></br></p>
                 <form>
                     <table>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect, Fragment } from 'react';
+import {Link} from 'react-router-dom';
 import MenuItemReadOnlyRow from './menuItemComponents/MenuItemReadOnlyRow';
 import MenuItemEditableRow from './menuItemComponents/MenuItemEditableRow';
 import './MenuItems.css';
@@ -134,17 +135,17 @@ function MenuItems() {
     const handleDeleteClick = (item_id) => {
         //DELETE request using fetch with error handling
         fetch(`http://localhost:3001/menuItems/${item_id}`, { method: 'DELETE' })
-            //.then(window.location.reload(false))
+            .then(window.location.reload(false))
             .catch(error => {
                 console.error('There was an error!', error);
         });
 
-        const newMenuItems = [...menuItemsData];
-        const index = menuItemsData.findIndex((menuItem) => menuItem.item_id === item_id);
+        // const newMenuItems = [...menuItemsData];
+        // const index = menuItemsData.findIndex((menuItem) => menuItem.item_id === item_id);
 
-        newMenuItems.splice(index, 1);
+        // newMenuItems.splice(index, 1);
 
-        setMenuItemsData(newMenuItems);
+        // setMenuItemsData(newMenuItems);
     }
 
     // VIEWING ALL MENU ITEMS
@@ -161,12 +162,17 @@ function MenuItems() {
 
     return(
         <div className = "menuItems">
-            <h1 class="text-6xl mb-9 mt-9"> Menu Items </h1>
-
+            <button className = "btnMenuItems">Menu Items</button>
             
+            <div>
+            <Link activeClassName="active" to={'/ManagerHome'}>
+            <a>
+                <button className = "backMenuItemsButton"> Back</button>
+            </a>
+            </Link>
+            </div>
 
             <div className = "menuItemTable">
-                <h2>Add a New Menu Item</h2>
                 <form onSubmit={handleAddFormSubmit}>
                     <input 
                         class="border-gray border-2"
@@ -205,7 +211,6 @@ function MenuItems() {
                             <th>Name</th> 
                             <th>Price</th>
                             <th>Category</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,0 +1,13 @@
+.btnHome {
+    border: none;
+    border-radius: 10px;
+    background-color: #E51636;
+    font-family: Verdana, sans-serif;
+    color:white;
+    padding: 15px;
+    height:50px;
+    width:200px;
+    position: absolute;
+    right: 670px;
+    top: 400px;
+  }

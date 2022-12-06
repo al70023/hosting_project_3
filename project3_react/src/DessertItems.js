@@ -1,6 +1,17 @@
 import React from 'react';
 import { useReducer, useEffect, useState, useContext, Fragment } from 'react';
+import { useNavigate} from "react-router-dom";
+import jwt_decode from 'jwt-decode';
 import './DessertItems.css';
+
+const Back = () => {
+    let navigate = useNavigate();
+    return (
+        <>
+          <button  className = "btnBackDessert" onClick={() => navigate(-1)}>Back</button> 
+        </>
+    );
+};
 
 function DessertItems() {
     // Data state variable defaulted to an empty array (for printing out the data)
@@ -81,6 +92,19 @@ function DessertItems() {
 
             <div className = "dessertItemTable">
                 <button className = "btnDessertItem">Dessert Items</button>
+
+                {(JSON.parse(sessionStorage.getItem("employeeSession"))) != null ?
+                (<p class = "employeeSession">
+                    Employee: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_name}
+                    <br/>
+                    ID: {JSON.parse(sessionStorage.getItem("employeeSession")).employee_id}
+                </p>
+                ) : (<p class = "googleSession">
+                    Hello, {jwt_decode(sessionStorage.getItem("googleSession")).given_name}
+                </p>)
+                }     
+
+                <Back/>
                 <p><br></br></p>
                 <form>
                 <table>
