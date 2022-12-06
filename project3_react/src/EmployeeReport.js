@@ -26,7 +26,7 @@ function EmployeeReport() {
             <div>
             <Link activeClassName="active" to={'/ManagerHome'}>
             <a>
-                <button className = "backButton">Back</button>
+                <button className = "backEmployeeButton">Back</button>
             </a>
             </Link>
             </div>

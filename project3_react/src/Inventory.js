@@ -182,7 +182,7 @@ function Inventory() {
             <div>
             <Link activeClassName="active" to={'/ManagerHome'}>
             <a>
-                <button className = "backButton"> Back</button>
+                <button className = "backInventoryButton"> Back</button>
             </a>
             </Link>
             </div>
