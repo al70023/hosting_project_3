@@ -150,17 +150,17 @@ function Inventory() {
     const handleDeleteClick = (inventory_id) => {
         //DELETE request using fetch with error handling
         fetch(`http://localhost:3001/inventory/${inventory_id}`, { method: 'DELETE' })
-            //.then(window.location.reload(false))
+            .then(window.location.reload(false))
             .catch(error => {
                 console.error('There was an error!', error);
         });
 
-        const newInventory = [...inventoryData];
-        const index = inventoryData.findIndex((inventory) => inventory.inventory_id === inventory_id);
+        // const newInventory = [...inventoryData];
+        // const index = inventoryData.findIndex((inventory) => inventory.inventory_id === inventory_id);
 
-        newInventory.splice(index, 1);
+        // newInventory.splice(index, 1);
 
-        setInventoryData(newInventory);
+        // setInventoryData(newInventory);
     }
 
     // VIEWING ALL INVENTORY

@@ -15,7 +15,7 @@ const InventoryReadOnlyRow = ({ inventory, handleEditClick, handleDeleteClick })
             </td>
 
             { <td>
-                <button type="button" class="deleteInventoryButton" onClick={() => handleDeleteClick(inventory.item_id)}>Delete</button>
+                <button type="button" class="deleteInventoryButton" onClick={() => handleDeleteClick(inventory.inventory_id)}>Delete</button>
             </td> }
         </tr>
     )
