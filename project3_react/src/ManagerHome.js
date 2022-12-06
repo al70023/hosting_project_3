@@ -45,7 +45,9 @@ function ManagerHome(){
         </div>
         <div class="mt-5">
         <Link activeClassName="active" to={'/ExcessReport'}>
-        <a class="font-bold rounded bg-red-300 text-lg">View Excess Report</a>
+        <a>
+            <button className = "btnViewItem"> View Excess Report</button>
+        </a>
         </Link>
         </div>
     </div>

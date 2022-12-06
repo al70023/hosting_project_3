@@ -97,7 +97,7 @@ const deleteInventory = (req, res) => {
 }
 
 const viewRestockReport = (req, res) => {
-    pool.query('SELECT * FROM inventory WHERE current_quantity < 3000 ORDER BY inventory_id' , (error, results) => {
+    pool.query('SELECT * FROM inventory WHERE current_quantity < start_quantity / 10 ORDER BY inventory_id' , (error, results) => {
         if (error) {
             throw error
         }
