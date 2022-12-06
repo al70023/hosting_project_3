@@ -19,7 +19,7 @@ function ManagerHome(){
         </p>    
         <button className = "btnManagerHome">Manager Home</button>
         </div>
-        <button class ="btnLogOutManager" onClick={ (e) => handleSignOut(e)}>Log Out</button>
+        <button class ="btnLogOutt" onClick={ (e) => handleSignOut(e)}>Log Out</button>
         <div>
         <Link activeClassName="active" to={'/MenuItems'}>
         <a>
