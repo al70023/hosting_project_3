@@ -131,8 +131,9 @@ function Home() {
         </div>
 
         <div class="customerBox">
-            Customer Login
-
+           <div class = "customerText">Customer Login
+           </div>
+            <div class = "signInBox">
             <div id="signInDiv"></div>
             { Object.keys(user).length != 0 && 
                 <div>
@@ -140,6 +141,7 @@ function Home() {
                     <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
                 </div>
             }
+            </div>
 
         </div>
 
