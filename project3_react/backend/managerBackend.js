@@ -61,8 +61,6 @@ const updateMenuItem = (req, res) => {
 }
 
 const deleteMenuItem = (req, res) => {
-    //const {item_id} = req.body
-
     const item_id = parseInt(req.params.item_id)
 
     pool.query('DELETE FROM menu_items_have_inventory WHERE item_id = $1',
@@ -189,7 +187,7 @@ const viewEmployeeReport = (req, res) => {
 
 const viewExcessReport = (req, res) => {
     const {date} = req.body
-    pool.query("select * from inventory where current_quantity>0.9*start_quantity AND received_date<'10/03/22'", (error, results) => {
+    pool.query("select * from inventory where current_quantity>0.9*start_quantity AND received_date < $1 ORDER BY inventory_id",[date], (error, results) => {
         if (error) {
             throw error
         }
