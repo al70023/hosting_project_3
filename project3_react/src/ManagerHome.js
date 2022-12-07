@@ -16,7 +16,7 @@ function ManagerHome(){
         }, 2000)
         return(
             <div>
-                <p>Restricted access, redirecting home...</p>
+                <p><button className = "btnRestrictedAccess">Restricted access, redirecting home...</button></p>
             </div>
         )
     }
@@ -31,7 +31,7 @@ function ManagerHome(){
         </p>    
         <button className = "btnManagerHome">Manager Home</button>
         </div>
-        <button class ="btnLogOutt" onClick={ (e) => handleSignOut(e)}>Log Out</button>
+        <button class ="btnLogOutManager" onClick={ (e) => handleSignOut(e)}>Log Out</button>
         <div>
         <Link activeClassName="active" to={'/MenuItems'}>
         <a>
