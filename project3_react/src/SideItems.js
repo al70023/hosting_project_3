@@ -138,7 +138,7 @@ function SideItems() {
                 <ol>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                     <li>
-                        {item.item_name}    {item.item_price}  <button className = "removeSideButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                        <button className ="btnAddSideName">{item.item_name}</button>    <button className ="btnAddSideName">{item.item_price} </button>  <button className = "removeEntreeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                         <p><br></br></p>
                     </li>
                 )}
