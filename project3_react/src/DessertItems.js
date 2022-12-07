@@ -22,7 +22,7 @@ function DessertItems() {
     const [totalCost, setTotalCost] = useState(parseFloat(sessionStorage.getItem("orderCost")) || 0.00);
 
     const fetchDessertItems = () => {
-        fetch('https://node-deployment-jaq0.onrender.com/DessertItems')
+        fetch('http://localhost:3001/DessertItems')
         .then(res => res.json())
         .then(json => setDessertItemsData(json))
     }
@@ -138,7 +138,7 @@ function DessertItems() {
                 <ol>
                 {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                     <li>
-                        {item.item_name}    {item.item_price}  <button className = "removeDessertButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                        <button className ="btnAddDessertName">{item.item_name}</button>    <button className ="btnAddEntreeName">{item.item_price} </button>  <button className = "removeEntreeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                         <p><br></br></p>
                     </li>
                 )}
