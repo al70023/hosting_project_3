@@ -22,7 +22,7 @@ function DessertItems() {
     const [totalCost, setTotalCost] = useState(parseFloat(sessionStorage.getItem("orderCost")) || 0.00);
 
     const fetchDessertItems = () => {
-        fetch('http://localhost:3001/DessertItems')
+        fetch('https://node-deployment-jaq0.onrender.com/DessertItems')
         .then(res => res.json())
         .then(json => setDessertItemsData(json))
     }
