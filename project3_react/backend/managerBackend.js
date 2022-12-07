@@ -28,24 +28,25 @@ const insertMenuItem = (req, res) => {
     [item_name, item_price, item_category], (error, results) => {
         if (error) {
             throw error
-        }
-    })
-
-    pool.query('SELECT item_id FROM menu_items WHERE item_name=$1', [item_name], (error, results) => {
-        if (error) {
-            throw error
-        }
-        const item_id = results.rows[0]["item_id"];
-        for (var i = 0; i < linked_inventory.length; i++) {
-            pool.query('INSERT INTO menu_items_have_inventory(item_id, inventory_id) VALUES($1, $2)', 
-            [item_id, linked_inventory[i].inventory_id], (error, results) => {
+        } else {
+            pool.query('SELECT item_id FROM menu_items WHERE item_name=$1', [item_name], (error, results) => {
                 if (error) {
                     throw error
+                }
+                const item_id = results.rows[0]["item_id"];
+                console.log(item_id);
+                for (var i = 0; i < linked_inventory.length; i++) {
+                    pool.query('INSERT INTO menu_items_have_inventory(item_id, inventory_id) VALUES($1, $2)', 
+                    [item_id, linked_inventory[i].inventory_id], (error, results) => {
+                        if (error) {
+                            throw error
+                        }
+                    })
                 }
             })
         }
     })
-
+    
 }
 
 const updateMenuItem = (req, res) => {
