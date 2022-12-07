@@ -107,7 +107,6 @@ function Home() {
     <body class="homeTopContainer">
         <div>
         <center><img class="homeLogo" src="https://cloudfront-us-east-1.images.arcpublishing.com/gray/GTPSWOMZ3BDMTGK52CDFYJWWLI.jpg" alt="Chick-fil-A logo"/></center>
-        Welcome to Chick-fil-A!
         </div>
 
         <center>
@@ -116,16 +115,17 @@ function Home() {
 
             <form onSubmit={handleEmployeeLogin}>
                 <div class="form-group mt-5">
-                    <label for="employee_id">Employee ID</label>
+                    <label for="employee_id" class = "mx-3">Employee ID</label>
                     <input type="number" style={{color:'black'}} class="form-control border-gray border-2 w-60" name="employee_id" onChange={handleLoginFormChange}></input>
                 </div>
 
                 <div class="form-group">
                 <br></br>
-                    <label for="password" class="mx-3">Password</label>
-                    <input type="password" style={{color:'black'}} class="form-control border-gray border-2 w-60 px-8" name="password" onChange={handleLoginFormChange}></input>
+                    <label for="password" class="mx-7">Password</label>
+                    <input type="password" style={{color:'black'}} class="form-control border-gray border-2 w-60" name="password" onChange={handleLoginFormChange}></input>
                 </div>
-                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-3">Login</button> 
+                <br></br>
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text- font-bold  px-10 rounded-full my-3">Login</button> 
             </form>           
 
         </div>
@@ -140,36 +140,11 @@ function Home() {
                     <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
                 </div>
             }
-        
 
         </div>
 
         </center>
-        
 
-        <img class="h-64 absolute top-50 right-0"src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Stories%20Images/2019/07/Steve%20robinson/cows.jpg?h=960&w=1440&la=en"/>
-
-        <div>
-            <Link activeClassName="active" to={'/'}>
-            <a >Home</a>
-            </Link>
-
-            <Link activeClassName="active" to={'/ManagerHome'}>
-            <a>Manager Portal</a>
-            </Link>
-
-            <Link activeClassName="active" to={'/ServerHome'}>
-            <a>Server Portal</a>
-            </Link>
-
-            <Link activeClassName="active" to={'/CustomerHome'}>
-            <a>Customer Portal</a>
-            </Link>
-            </div> 
-
-        
-
-        
     </body>
     );
 }
