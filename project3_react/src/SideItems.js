@@ -22,7 +22,7 @@ function SideItems() {
     const [totalCost, setTotalCost] = useState(parseFloat(sessionStorage.getItem("orderCost")) || 0.00);
 
     const fetchSideItems = () => {
-        fetch('http://localhost:3001/SideItems')
+        fetch('https://node-deployment-jaq0.onrender.com/SideItems')
         .then(res => res.json())
         .then(json => setSideItemsData(json))
     }
