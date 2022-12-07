@@ -47,7 +47,7 @@ function MenuItems() {
     const [selectedOption, setSelectedOption] = useState([]);
 
     const fetchInventory = () => {
-        fetch('http://localhost:3001/Inventory')
+        fetch('https://node-deployment-jaq0.onrender.com/Inventory')
         .then(res => res.json())
         .then(json => setInventoryData(json))
     }
@@ -113,7 +113,7 @@ function MenuItems() {
         }
 
         // Add the new menu item into the table
-        fetch('http://localhost:3001/menuItems/insert', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/menuItems/insert', requestOptions)
             .then(res => res.json())
             .then(window.location.reload('false'));             //Reload the page with the new menu item added to the table
     }
@@ -182,7 +182,7 @@ function MenuItems() {
             body: JSON.stringify(editedMenuItem)          // body = info for new menu item
         }
 
-        fetch('http://localhost:3001/menuItems/update', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/menuItems/update', requestOptions)
             .then(res => res.json())
             .then(window.location.reload('false'));             //Reload the page with the updated menu item
     }
@@ -194,7 +194,7 @@ function MenuItems() {
     // DELETING A MENU ITEM
     const handleDeleteClick = (item_id) => {
         //DELETE request using fetch with error handling
-        fetch(`http://localhost:3001/menuItems/${item_id}`, { method: 'DELETE' })
+        fetch(`https://node-deployment-jaq0.onrender.com/menuItems/${item_id}`, { method: 'DELETE' })
             .then(window.location.reload(false))
             .catch(error => {
                 console.error('There was an error!', error);
@@ -210,7 +210,7 @@ function MenuItems() {
 
     // VIEWING ALL MENU ITEMS
     const fetchMenuItems = () => {
-        fetch('http://localhost:3001/MenuItems', {mode: 'cors'})
+        fetch('https://node-deployment-jaq0.onrender.com/MenuItems', {mode: 'cors'})
         .then(res => res.json())
         .then(json => setMenuItemsData(json))
     }
