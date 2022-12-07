@@ -1,5 +1,5 @@
 .btnCustomerHome {
-    background-color: #E51636; /* Green */
+    background-color: #af1212; /* Green */
     border-radius: 10px;
     font-family: Verdana, sans-serif;
     font-size: 40px;
@@ -30,14 +30,14 @@
     font-size: 20px;
 }
 
-.btnLogOut {
+.btnLogOutCustomer {
     border: none;
     border-radius: 10px;
     background-color: black;
     font-family: Verdana, sans-serif;
+    font-size: 20px;
     color:white;
-    padding: 15px;
-    height:50px;
+    height:80px;
     width:100px;
     position: absolute;
     right: 75px;
