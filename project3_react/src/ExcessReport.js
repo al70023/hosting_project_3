@@ -97,6 +97,8 @@ function ExcessReport() {
                                 {/* Table Column Headers */}
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Storage Capacity</th>
+                                <th>In storage</th>
                                 
                                 
                             </tr>
@@ -106,7 +108,8 @@ function ExcessReport() {
                                 <tr>
                                     <td name="ID">{ExcessItem.inventory_id}</td>
                                     <td name="name">{ExcessItem.inventory_name}</td>
-                                    
+                                    <td name="cap">{ExcessItem.start_quantity}</td>
+                                    <td name="is">{ExcessItem.current_quantity}</td>
                                     
                                 </tr>
                             ))}
