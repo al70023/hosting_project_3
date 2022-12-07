@@ -78,6 +78,7 @@ function Checkout() {
 
         if (checkoutData.cust_name === '') {
           checkoutData.cust_name = jwt_decode(sessionStorage.getItem("googleSession")).given_name;
+          console.log(checkoutData.cust_name);
         }
 
         // Assign the values from the order to a new order instance
@@ -97,10 +98,13 @@ function Checkout() {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newOrder)          // body = info for the menu item to add (from newMenuItem instance)
         }
+        
+        console.log(newOrder);
 
         // Add the new menu item into the table
         fetch('https://node-deployment-jaq0.onrender.com/orderSummary/insert', requestOptions)
             .then(res => res.json())
+            .then(console.log(res))
             .then(window.location.replace('/OrderSummary'));
     }
 
