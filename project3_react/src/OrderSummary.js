@@ -22,6 +22,20 @@ function OrderSummary() {
         window.location.replace('/');
     }
 
+    function handleNewOrderServer(event) {
+        const temp = sessionStorage.getItem("employeeSession");
+        sessionStorage.clear();
+        sessionStorage.setItem("employeeSession", temp);
+        window.location.replace("/ServerHome");
+    }
+
+    function handleNewOrderCustomer(event) {
+        const temp = sessionStorage.getItem("googleSession");
+        sessionStorage.clear();
+        sessionStorage.setItem("googleSession", temp);
+        window.location.replace("/CustomerHome");
+    }
+
     return (
         <div className="OrderSummary">
             <button className = "btnOrderSummaryItem">Order Summary</button>
@@ -57,6 +71,12 @@ function OrderSummary() {
               <br></br>
               <br></br>
             <button class ="btnReturnHome" onClick={ (e) => handleSignOut(e)}>Return Home</button>
+            {JSON.parse(sessionStorage.getItem("employeeSession") === null) &&
+                <button class="newOrder" onClick={ (e) => handleNewOrderCustomer(e)}>Place New Order</button>
+            }
+            {(sessionStorage.getItem("googleSession") === null) &&
+                <button class="newOrder" onClick={ (e) => handleNewOrderServer(e)}>Place New Order</button>
+            }
         </div>
     );
 }
