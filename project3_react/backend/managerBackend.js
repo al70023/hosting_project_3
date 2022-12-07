@@ -91,7 +91,7 @@ const viewInventory = (req, res) => {
 const insertInventory = (req, res) => {
     const {inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location} = req.body
 
-    pool.query('INSERT INTO inventory (inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location) VALUES($1, $2, $3)', 
+    pool.query('INSERT INTO inventory (inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location) VALUES($1, $2, $3, $4, $5, $6)', 
     [inventory_name, start_quantity, current_quantity, spoil_date, received_date, stored_location], (error, results) => {
         if (error) {
             throw error
