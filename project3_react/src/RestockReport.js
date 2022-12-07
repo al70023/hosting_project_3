@@ -12,7 +12,7 @@ function RestockReport() {
     })
 
     const fetchRestockItems = () => {
-        fetch('http://localhost:3001/RestockReport')
+        fetch('https://node-deployment-jaq0.onrender.com/RestockReport')
             .then(res => res.json())
             .then(json => setRestockItemsData(json))
     }
@@ -55,7 +55,7 @@ function RestockReport() {
         }
 
         // Add the new inventory into the table
-        fetch('http://localhost:3001/RestockReport/Restock', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/RestockReport/Restock', requestOptions)
             .then(res => res.json())
             .then(json => setRestockItemsData(json))
             .then(window.location.reload());
@@ -79,7 +79,7 @@ function RestockReport() {
         }
 
         // Add the new inventory into the table
-        fetch('http://localhost:3001/RestockReport/Restock', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/RestockReport/Restock', requestOptions)
             .then(res => res.json())
             .then(json => setRestockItemsData(json))
             .then(window.location.reload());
