@@ -95,7 +95,7 @@ function SalesReport() {
                         onChange={handleAddFormChange}
                     />
                     
-                    <button type="submit" class="btnSubmitTimePeriod">Submit time period</button>
+                    <button type="submit" class="addInventoryButton">Submit time period</button>
                 </form>
 
 
