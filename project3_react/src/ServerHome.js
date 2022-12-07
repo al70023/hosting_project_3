@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ServerHome.css';
 
 
@@ -9,8 +9,21 @@ function ServerHome() {
         window.location.replace('/');
     }
 
-    return (
+    if (JSON.parse(sessionStorage.getItem("employeeSession") === null)) {
+        useEffect(() => {
+            setTimeout(() => {
+                sessionStorage.clear();
+                window.location.replace("/");
+            }, 2000)
+          }, [])
+        return(
+            <div>
+                <p>Restricted access, redirecting home...</p>
+            </div>
+        )
+    }
 
+    return (
         <div >
             <div class="homeTopContainer">
                 <p class = "employeeSession">
