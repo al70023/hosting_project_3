@@ -1,6 +1,6 @@
 .btnCheckoutItem {
     border-radius: 10px;
-    background-color: #E51636; /* Green */
+    background-color: #af1212; /* Green */
     font-family: Verdana, sans-serif;
     font-size: 40px;
     border: none;
@@ -12,21 +12,22 @@
 }
 
 .btnCheckoutSubmit {
-    background-color: #E51636; /* Green */
+    background-color: #af1212; /* Green */
     border-radius:10px;
     font-family: Verdana, sans-serif;
+    font-size:20px;
     border: none;
     color: white;
     top:10px;
-    width: 150px;
-    height: 50px;
+    width: 175px;
+    height: 60px;
     position:relative;
     bottom: 25px;
 }
 
 .removeCheckoutButton {
   border-radius: 10px;
-  background-color: #E51636; /* Green */
+  background-color: #af1212; /* Green */
   font-family: Verdana, sans-serif;
   border: none;
   color: white;
@@ -37,18 +38,19 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .btnStoreLocator {
-    background-color: #E51636; /* Green */
+    background-color: #af1212; /* Green */
     border-radius:10px;
     font-family: Verdana, sans-serif;
+    font-size:20px;
     border: none;
     color: white;
     top:10px;
-    width: 150px;
-    height: 50px;
+    width: 175px;
+    height: 60px;
     position:relative;
     bottom: 25px;
 }
@@ -56,10 +58,10 @@
 .btnBackCheckout {
     border: none;
     border-radius: 10px;
-    background-color: #E51636;
+    background-color: #af1212;
     font-family: Verdana, sans-serif;
+    font-size: 20px;
     color:white;
-    padding: 15px;
     height:50px;
     width:75px;
     position: relative;
