@@ -115,14 +115,16 @@ function Home() {
 
             <form onSubmit={handleEmployeeLogin}>
                 <div class="form-group mt-5">
-                    <label for="employee_id" class = "mx-3">Employee ID</label>
-                    <input type="number" style={{color:'black'}} class="form-control border-gray border-2 w-60" name="employee_id" onChange={handleLoginFormChange}></input>
+                    <label for="employee_id" class = "mx-3">Employee ID:
+                    <input type="number" style={{color:'black'}} class="form-control border-gray border-2 w-60 mx-2" name="employee_id" onChange={handleLoginFormChange}></input>
+                    </label>
                 </div>
 
                 <div class="form-group">
                 <br></br>
-                    <label for="password" class="mx-7">Password</label>
-                    <input type="password" style={{color:'black'}} class="form-control border-gray border-2 w-60" name="password" onChange={handleLoginFormChange}></input>
+                    <label for="password" class="mx-7">Password:
+                    <input type="password" style={{color:'black'}} class="form-control border-gray border-2 w-60 ml-9" name="password" onChange={handleLoginFormChange}></input>
+                    </label>
                 </div>
                 <br></br>
                 <button type="submit" class="bg-white hover:bg-red-700 text- font-bold text-black px-10 rounded-full my-3">Login</button> 
