@@ -19,7 +19,7 @@
 
   .btnEntreeItem {
     border-radius: 10px;
-    background-color: #E51636; /* Green */
+    background-color: #af1212; /* Green */
     font-family: Verdana, sans-serif;
     font-size: 40px;
     border: none;
@@ -33,11 +33,10 @@
 
 .checkoutEntreeButton {
   border-radius: 10px;
-  background-color: #E51636; /* Green */
+  background-color: #af1212; /* Green */
   font-family: Verdana, sans-serif;
   border: none;
   color: white;
-  padding: 15px 32px;
   position:relative;
   top:50px;
   width: 150px;
@@ -45,12 +44,12 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .addEntreeButton {
   border-radius: 10px;
-  background-color: #E51636; /* Green */
+  background-color: #af1212; /* Green */
   font-family: Verdana, sans-serif;
   border: none;
   color: white;
@@ -60,37 +59,37 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
 
 }
 .removeEntreeButton {
   border-radius: 10px;
-  background-color: #E51636; /* Green */
+  background-color: #af1212; /* Green */
   font-family: Verdana, sans-serif;
   border: none;
   color: white;
-  width: 125px;
-  height: 50px;
+  width: 150px;
+  height: 60px;
   position: relative;
   left:25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .btnBackEntree {
   border: none;
   border-radius: 10px;
-  background-color: #E51636;
+  background-color: #af1212;
   font-family: Verdana, sans-serif;
   color:white;
-  padding: 15px;
   height:50px;
   width:75px;
   position: relative;
   left: 460px;
   bottom: 10px;
+  font-size: 20px;
 }
 
 .employeeSession {
@@ -127,4 +126,20 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+}
+
+td {
+  font-size:20px;
+}
+
+th {
+  font-size:20px;
+}
+
+h1 {
+  font-size: 20px;
+}
+.btnAddEntreeName {
+  font-size: 20px;
+  padding-left: 20px;;
 }
