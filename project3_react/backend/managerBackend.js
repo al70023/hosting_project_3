@@ -124,12 +124,25 @@ const viewRestockReport = (req, res) => {
     })
 }
 const Restock = (req, res) => {
-    pool.query('Update inventory SET current_quantity = start_quantity' , (error, results) => {
-        if (error) {
-            throw error
-        }
-        res.status(200).json(results.rows)
-    })
+    const {Item, Amount} = req.body
+    console.log(Amount)
+    console.log(Item)
+    
+    if(String(Amount) == "NA"){
+        pool.query('Update inventory SET current_quantity = start_quantity' , (error, results) => {
+            if (error) {
+                throw error
+            }
+            res.status(200).json(results.rows)
+        })
+    } else{
+        pool.query('Update inventory SET current_quantity = $2 WHERE inventory_name = $1' , [Item, Amount], (error, results) => {
+            if (error) {
+                throw error
+            }
+            res.status(200).json(results.rows)
+        })   
+    }
 }
 
 const viewSalesReport = (req, res) => {

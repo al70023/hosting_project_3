@@ -43,8 +43,8 @@ function RestockReport() {
 
         // Assign the values from the form to a new period instance
         const newRestock = {
-            Item: "NA",
-            Amount: "NA"
+            Item: 'NA',
+            Amount: 'NA'
         };
 
         // Specfifies what kind of request it is
@@ -68,7 +68,7 @@ function RestockReport() {
         // Assign the values from the form to a new period instance
         const newRestock = {
             Item: addFormData.Item_name,
-            Amount: addFormData.Amount
+            Amount: addFormData.Restock_amount
         };
 
         // Specfifies what kind of request it is
@@ -91,13 +91,13 @@ function RestockReport() {
 
 
             <button className = "btnRestock">Restock</button>
-            <form onSubmit={handleAddFormSubmit2}>
+            <form onSubmit={handleAddFormSubmit}>
                 
                 <button type="submit" class="btnRestockItems">Restock All Items</button>
                 
             </form>
 
-            <form class="mt-8" onSubmit={handleAddFormSubmit}>
+            <form class="mt-8" onSubmit={handleAddFormSubmit2}>
                     <input 
                         class="border-gray border-2 w-60"
                         type="text"
@@ -108,8 +108,8 @@ function RestockReport() {
                     />
                     <input 
                         class="border-gray border-2 w-60"
-                        type="Restock_amount"
-                        name="end_date"
+                        type="number"
+                        name="Restock_amount"
                         required="required"
                         placeholder="Amount"
                         onChange={handleAddFormChange}
