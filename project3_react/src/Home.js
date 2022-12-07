@@ -66,7 +66,7 @@ function Home() {
         }
 
         async function fetchLogin(requestOptions) {
-            const response = await fetch('http://localhost:3001/employeeLogin/info', requestOptions);
+            const response = await fetch('https://node-deployment-jaq0.onrender.com/employeeLogin/info', requestOptions);
             const data = await response.json();
             sessionStorage.setItem("employeeSession", JSON.stringify(data[0]));
 
