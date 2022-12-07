@@ -23,7 +23,7 @@ function EntreeItems() {
     const [totalCost, setTotalCost] = useState(parseFloat(sessionStorage.getItem("orderCost")) || 0.00);
 
     const fetchEntreeItems = () => {
-        fetch('http://localhost:3001/EntreeItems')
+        fetch('https://node-deployment-jaq0.onrender.com/EntreeItems')
             .then(res => res.json())
             .then(json => setEntreeItemsData(json))
     }
