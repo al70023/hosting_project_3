@@ -5,7 +5,8 @@ const dbServer = require("./serverBackend")
 const dbManager = require("./managerBackend");
 const { Pool } = require('pg/lib');
 const app = express()
-const PORT = 3001
+//const PORT = 3001
+const PORT = process.env.PORT
 
 app.listen(PORT, () => {
   console.log("server has started on port", PORT);
