@@ -66,7 +66,7 @@ function Checkout() {
             }
         }
 
-        const currDate = new Date().toLocaleDateString();
+        const currDate = new Date().toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'});
         const currTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
 
         var id = 5;
