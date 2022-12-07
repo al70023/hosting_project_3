@@ -14,12 +14,10 @@ function CustomerHome(){
     }
 
     if ((sessionStorage.getItem("googleSession") === null)) {
-        useEffect(() => {
-            setTimeout(() => {
-                sessionStorage.clear();
-                window.location.replace("/")
-            }, 2000)
-          }, [])
+        setTimeout(() => {
+            sessionStorage.clear();
+            window.location.replace("/");
+        }, 2000)
         return(
             <div>
                 <p>Restricted access, redirecting home...</p>

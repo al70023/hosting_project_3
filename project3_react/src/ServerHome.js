@@ -10,12 +10,10 @@ function ServerHome() {
     }
 
     if (JSON.parse(sessionStorage.getItem("employeeSession") === null)) {
-        useEffect(() => {
-            setTimeout(() => {
-                sessionStorage.clear();
-                window.location.replace("/");
-            }, 2000)
-          }, [])
+        setTimeout(() => {
+            sessionStorage.clear();
+            window.location.replace("/");
+        }, 2000)
         return(
             <div>
                 <p>Restricted access, redirecting home...</p>
