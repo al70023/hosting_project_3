@@ -20,7 +20,7 @@ function CustomerHome(){
         }, 2000)
         return(
             <div>
-                <p>Restricted access, redirecting home...</p>
+                <p><button className = "btnRestrictedAccess">Restricted access, redirecting home...</button></p>
             </div>
         )
     }
@@ -33,7 +33,7 @@ function CustomerHome(){
                 <p class = "googleSession">
                     Hello, {jwt_decode(sessionStorage.getItem("googleSession")).given_name}
                 </p>
-                <button class="btnLogOut" onClick={ (e) => handleSignOut(e)}>Log Out</button>
+                <button class="btnLogOutCustomer" onClick={ (e) => handleSignOut(e)}>Log Out</button>
 
                 <a href="/EntreeItems">
                     <button className = "btnOne">Entrees</button>
