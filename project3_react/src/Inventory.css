@@ -16,7 +16,7 @@
   }
 
   .btnInventory {
-    background-color: #E51636; /* Green */
+    background-color: #af1212; /* Green */
     border-radius: 10px;
     font-family: Verdana, sans-serif;
     font-size: 50px;
@@ -32,7 +32,7 @@
   .deleteInventoryButton {
     border: none;
     border-radius: 10px;
-    background-color: #E51636;
+    background-color: #af1212;
     font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
@@ -40,7 +40,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 20px;
     margin: 5px;
     cursor: pointer;
   }
@@ -48,17 +48,17 @@
   .saveInventoryButton {
     border: none;
     border-radius: 10px;
-    background-color: #E51636;
+    background-color: #af1212;
     font-family: Verdana, sans-serif;
     position: relative;
     color:white;
     padding: 15px;
     width:100px;
-    top: 28px;
+    top: 35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 20px;
     margin: 5px;
     cursor: pointer;
   }
@@ -66,7 +66,7 @@
   .editInventoryButton {
     border: none;
     border-radius: 10px;
-    background-color: #E51636;
+    background-color: #af1212;
     font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
@@ -74,7 +74,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 20px;
     margin: 5px;
     cursor: pointer;
   }
@@ -82,14 +82,14 @@
   .addInventoryButton {
     border: none;
     border-radius: 10px;
-    background-color: #E51636;
+    background-color: #af1212;
     font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 20px;
     margin: 5px;
     cursor: pointer;
   }
@@ -97,18 +97,18 @@
   .cancelInventoryButton {
     border: none;
     border-radius: 10px;
-    background-color: #E51636;
+    background-color: #af1212;
     font-family: Verdana, sans-serif;
     color:white;
     padding: 15px;
     width:100px;
     position: relative;
-    left:140px;
+    left:120px;
     bottom:35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 20px;
     margin: 5px;
     cursor: pointer;
   }
@@ -116,11 +116,10 @@
 .backInventoryButton {
   border: none;
   border-radius: 10px;
-  background-color: #E51636;
+  background-color: #af1212;
   font-family: Verdana, sans-serif;
+  font-size:20px;
   color:white;
-  color:white;
-  padding: 15px;
   height:50px;
   width:75px;
   position: relative;
