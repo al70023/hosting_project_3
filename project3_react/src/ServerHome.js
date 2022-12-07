@@ -16,7 +16,7 @@ function ServerHome() {
         }, 2000)
         return(
             <div>
-                <p>Restricted access, redirecting home...</p>
+                <p><button className = "btnRestrictedAccess">Restricted access, redirecting home...</button></p>
             </div>
         )
     }
@@ -37,7 +37,7 @@ function ServerHome() {
                     </a>
                     <button class ="btnLogOutManager" onClick={ (e) => handleSignOut(e)}>Log Out</button>
                     </div>) : (
-                    <button class ="btnLogOutt" onClick={ (e) => handleSignOut(e)}>Log Out</button>
+                    <button class ="btnLogOutServer" onClick={ (e) => handleSignOut(e)}>Log Out</button>
                     )
                 }  
 
