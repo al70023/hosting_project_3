@@ -128,4 +128,8 @@
   bottom:175px;
 }
 
-
+.dropdown {
+  width:200px;
+  display: inline-block;
+  height: 70px;
+}

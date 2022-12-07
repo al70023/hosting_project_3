@@ -3,11 +3,70 @@ import { useState, useEffect, Fragment } from 'react';
 import {Link} from 'react-router-dom';
 import MenuItemReadOnlyRow from './menuItemComponents/MenuItemReadOnlyRow';
 import MenuItemEditableRow from './menuItemComponents/MenuItemEditableRow';
+import { default as ReactSelect } from "react-select";
+import { components } from "react-select";
 import './MenuItems.css';
 
+const Option = (props) => {
+    return (
+      <div>
+        <components.Option {...props}>
+          <input
+            type="checkbox"
+            checked={props.isSelected}
+            onChange={() => null}
+          />{" "}
+          <label>{props.label}</label>
+        </components.Option>
+      </div>
+    );
+};
+
 function MenuItems() {
+
+    var colourOptions = [
+        { value: "ocean1", label: "Ocean" },
+        { value: "blue", label: "Blue" },
+        { value: "purple", label: "Purple" },
+        { value: "red", label: "Red" },
+        { value: "orange", label: "Orange" },
+        { value: "yellow", label: "Yellow" },
+        { value: "green", label: "Green" },
+        { value: "forest", label: "Forest" },
+        { value: "slate", label: "Slate" },
+        { value: "silver", label: "Silver" }
+      ];
+
     // Data state variable defaulted to an empty array (for printing out the data)
     const [menuItemsData, setMenuItemsData] = useState([]);
+
+    // Data state variable defaulted to an empty array (for printing out the data)
+    const [inventoryData, setInventoryData] = useState([]);
+
+    // Select inventory items from dropdown
+    const [selectedOption, setSelectedOption] = useState([]);
+
+    const fetchInventory = () => {
+        fetch('http://localhost:3001/Inventory')
+        .then(res => res.json())
+        .then(json => setInventoryData(json))
+    }
+
+    useEffect(() => {
+        fetchInventory();
+    }, []);
+
+    var inventoryDropdownItems = [];
+
+    for (var i = 0; i < inventoryData.length; i++) {
+        inventoryDropdownItems.push(inventoryData[i]);
+        inventoryDropdownItems[i].value = inventoryDropdownItems[i].inventory_id;
+        inventoryDropdownItems[i].label = inventoryDropdownItems[i].inventory_name;
+    }
+
+    const handleDropdownChange = (selected) => {
+        setSelectedOption(selected);
+    };
 
     // ADDING A NEW MENU ITEM
     // Data state variable for the data from the add menu item form
@@ -42,7 +101,8 @@ function MenuItems() {
         const newMenuItem = {
             item_name: addFormData.item_name,
             item_price: addFormData.item_price,
-            item_category: addFormData.item_category
+            item_category: addFormData.item_category,
+            linked_inventory: selectedOption
         };
 
         // Specfifies what kind of request it is
@@ -199,6 +259,18 @@ function MenuItems() {
                         placeholder="Enter item category..."
                         onChange={handleAddFormChange}
                     />
+                    <div class="dropdown">
+                        <ReactSelect 
+                            options={inventoryDropdownItems}
+                            isMulti
+                            closeMenuOnSelect={false}
+                            hideSelectedOptions={false}
+                            components={{Option}}
+                            onChange={handleDropdownChange}
+                            allowSelectAll={true}
+                            value={selectedOption}
+                        />
+                    </div>
                     <button type="submit" class="addMenuItemButton">Add New Menu Item</button>
                 </form>
 
