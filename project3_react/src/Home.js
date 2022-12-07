@@ -125,7 +125,7 @@ function Home() {
                     <input type="password" style={{color:'black'}} class="form-control border-gray border-2 w-60" name="password" onChange={handleLoginFormChange}></input>
                 </div>
                 <br></br>
-                <button type="submit" class="bg-red-500 hover:bg-red-700 text- font-bold  px-10 rounded-full my-3">Login</button> 
+                <button type="submit" class="bg-white hover:bg-red-700 text- font-bold text-black px-10 rounded-full my-3">Login</button> 
             </form>           
 
         </div>
