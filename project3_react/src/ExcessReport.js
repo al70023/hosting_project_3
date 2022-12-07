@@ -42,7 +42,7 @@ function ExcessReport() {
         }
 
         // Add the new inventory into the table
-        fetch('http://localhost:3001/ExcessReport', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/ExcessReport', requestOptions)
             .then(res => res.json())
             //.then(window.location.reload('false'))
             .then(json => setExcessItemsData(json));             
@@ -52,7 +52,7 @@ function ExcessReport() {
 
 
     const fetchExcessItems = () => {
-        fetch('http://localhost:3001/ExcessReport')
+        fetch('https://node-deployment-jaq0.onrender.com/ExcessReport')
             .then(res => res.json())
             .then(json => setExcessItemsData(json))
     }
