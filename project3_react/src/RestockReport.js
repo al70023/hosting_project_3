@@ -115,7 +115,7 @@ function RestockReport() {
                         onChange={handleAddFormChange}
                     />
                     
-                    <button type="submit" class="btnSubmitTimePeriod">Restock Item</button>
+                    <button type="submit" className="addInventoryButton">Restock Item</button>
                 </form>
 
             <div>
