@@ -6,15 +6,16 @@ function OrderSummary() {
 
     const [orderSummaryData, setOrderSummaryData] = useState([]);
 
-    const fetchOrderSummary = () => {
-        fetch('https://node-deployment-jaq0.onrender.com/OrderSummary')
-        .then(res => res.json())
-        .then(json => setOrderSummaryData(json))
+    async function fetchOrderSummary() {
+        const response = await fetch('https://node-deployment-jaq0.onrender.com/orderSummary/');
+        const data = await response.json();
+        return data;
     }
     
     // Call the function on the component mount
     useEffect(() => {
-        fetchOrderSummary();
+        const data = fetchOrderSummary();
+        setOrderSummaryData(data);
     }, []);
 
     function handleSignOut(event) {
