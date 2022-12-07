@@ -46,7 +46,7 @@ const insertMenuItem = (req, res) => {
             })
         }
     })
-    
+
 }
 
 const updateMenuItem = (req, res) => {
@@ -70,13 +70,12 @@ const deleteMenuItem = (req, res) => {
         if (error) {
             throw error
         }
-    })
-
-    pool.query('DELETE FROM menu_items WHERE item_id = $1',
-    [item_id], (error, results) => {
-        if (error) {
-            throw error
-        }
+        pool.query('DELETE FROM menu_items WHERE item_id = $1',
+        [item_id], (error, results) => {
+            if (error) {
+                throw error
+            }
+        })
     })
 }
 
@@ -121,14 +120,12 @@ const deleteInventory = (req, res) => {
         if (error) {
             throw error
         }
-    })
-
-
-    pool.query('DELETE FROM inventory WHERE inventory_id = $1',
-    [inventory_id], (error, results) => {
-        if (error) {
-            throw error
-        }
+        pool.query('DELETE FROM inventory WHERE inventory_id = $1',
+        [inventory_id], (error, results) => {
+            if (error) {
+                throw error
+            }
+        })
     })
 }
 
