@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {Link, useNavigate } from 'react-router-dom';
 import './ManagerHome.css';
 
 function ManagerHome(){
@@ -7,6 +7,18 @@ function ManagerHome(){
     function handleSignOut(event) {
         sessionStorage.clear();
         window.location.replace('/');
+    }
+
+    if (JSON.parse(sessionStorage.getItem("employeeSession") === null) || JSON.parse(sessionStorage.getItem("employeeSession")).position != 2) {
+        setTimeout(() => {
+            sessionStorage.clear();
+            window.location.replace("/");
+        }, 2000)
+        return(
+            <div>
+                <p>Restricted access, redirecting home...</p>
+            </div>
+        )
     }
 
     return(

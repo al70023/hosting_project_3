@@ -24,32 +24,39 @@ function OrderSummary() {
 
     return (
         <div className="OrderSummary">
-            <h1>Order Summary</h1>
+            <button className = "btnOrderSummaryItem">Order Summary</button>
+
             <br></br>
 
             {orderSummaryData.map((orderItem) => (
                 <ul>
                     <li>
-                        Time: {orderItem.time}
+                       <button className = "btnOrderList">Time: {orderItem.time}</button>
                     </li>
                     <li>
-                        Customer Name: {orderItem.cust_name}
+                        <br></br>
+                        <button className = "btnOrderList">Customer Name: {orderItem.cust_name}</button>
+                        
                     </li>
                     <li>
-                        Items Ordered: {orderItem.items_ordered_string}
+                        <br></br>
+                        <button className = "btnOrderList"> Items Ordered: {orderItem.items_ordered_string}</button>
                     </li>
                     <li>
-                        Total Price: {orderItem.total_cost.toFixed(2)}
+                        <br></br>
+                        <button className = "btnOrderList">Total Price: {orderItem.total_cost.toFixed(2)}</button>
                     </li>
                     <li>
-                        Credit Card Number: {orderItem.credit_card_num}
-                    </li>
-                    <li>
-                        Employee ID: {orderItem.employee_id}
+                        <br></br>
+                        <button className = "btnOrderList">Employee ID: {orderItem.employee_id}</button>
                     </li>
                 </ul>
             ))}
-            <button class ="btnHome" onClick={ (e) => handleSignOut(e)}>Return Home</button>
+            
+              <br></br>
+              <br></br>
+              <br></br>
+            <button class ="btnReturnHome" onClick={ (e) => handleSignOut(e)}>Return Home</button>
         </div>
     );
 }

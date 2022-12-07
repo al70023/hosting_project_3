@@ -242,6 +242,7 @@ function Checkout() {
                         onChange={handleCheckoutFormChange}
                     />
                     <br/>
+                    <p><br></br></p>
                     <button className = "btnCheckoutSubmit" type="submit">Submit Order</button>
                 </form>
             </div>

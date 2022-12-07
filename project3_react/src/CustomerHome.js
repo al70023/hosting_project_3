@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import jwt_decode from 'jwt-decode'
 import './CustomerHome.css';
 
@@ -11,6 +11,18 @@ function CustomerHome(){
         sessionStorage.clear();
         setUser({});
         window.location.replace('/');
+    }
+
+    if ((sessionStorage.getItem("googleSession") === null)) {
+        setTimeout(() => {
+            sessionStorage.clear();
+            window.location.replace("/");
+        }, 2000)
+        return(
+            <div>
+                <p>Restricted access, redirecting home...</p>
+            </div>
+        )
     }
 
     return (

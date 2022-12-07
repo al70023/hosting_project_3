@@ -22,7 +22,7 @@ const viewMenuItems = (req, res) => {
 }
 
 const insertMenuItem = (req, res) => {
-    const {item_name, item_price, item_category} = req.body
+    const {item_name, item_price, item_category, linked_inventory} = req.body
 
     pool.query('INSERT INTO menu_items (item_name, item_price, item_category) VALUES($1, $2, $3)', 
     [item_name, item_price, item_category], (error, results) => {
@@ -30,6 +30,22 @@ const insertMenuItem = (req, res) => {
             throw error
         }
     })
+
+    pool.query('SELECT item_id FROM menu_items WHERE item_name=$1', [item_name], (error, results) => {
+        if (error) {
+            throw error
+        }
+        const item_id = results.rows[0]["item_id"];
+        for (var i = 0; i < linked_inventory.length; i++) {
+            pool.query('INSERT INTO menu_items_have_inventory(item_id, inventory_id) VALUES($1, $2)', 
+            [item_id, linked_inventory[i].inventory_id], (error, results) => {
+                if (error) {
+                    throw error
+                }
+            })
+        }
+    })
+
 }
 
 const updateMenuItem = (req, res) => {
