@@ -78,7 +78,6 @@ function Checkout() {
 
         if (checkoutData.cust_name === '') {
           checkoutData.cust_name = jwt_decode(sessionStorage.getItem("googleSession")).given_name;
-          console.log(checkoutData.cust_name);
         }
 
         // Assign the values from the order to a new order instance
@@ -98,14 +97,10 @@ function Checkout() {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newOrder)          // body = info for the menu item to add (from newMenuItem instance)
         }
-        
-        console.log(newOrder);
 
         async function fetchOrderSummary(requestOptions) {
-             const response = await fetch('https://node-deployment-jaq0.onrender.com/orderSummary/insert', requestOptions)
-             const data = await response.json();
-//             .then(res => res.json())
-//             .then(console.log(res))
+          const response = await fetch('https://node-deployment-jaq0.onrender.com/orderSummary/insert', requestOptions)
+          const data = await response.json();
         }
         fetchOrderSummary(requestOptions);
         window.location.replace('/OrderSummary');
@@ -216,7 +211,7 @@ function Checkout() {
                     <ol>
                         {JSON.parse(sessionStorage.getItem("itemsOrdered")).map((item) =>
                             <li>
-                                {item.item_name}    {item.item_price}  <button className = "removeCheckoutButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
+                                 <button className ="btnAddDrinkName">{item.item_name}</button>    <button className ="btnAddEntreeName">{item.item_price} </button>  <button className = "removeEntreeButton" type="button" onClick={() => removeItem(item)}>Remove Item</button>
                                 <p><br></br></p>
                             </li>
                         )}
