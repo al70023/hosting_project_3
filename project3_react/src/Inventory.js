@@ -59,7 +59,7 @@ function Inventory() {
         }
 
         // Add the new inventory into the table
-        fetch('http://localhost:3001/inventory/insert', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/inventory/insert', requestOptions)
             .then(res => res.json())
             .then(window.location.reload('false'));             //Reload the page with the new inventory added to the table
     }
@@ -137,7 +137,7 @@ function Inventory() {
             body: JSON.stringify(editedInventory)          // body = info for new inventory
         }
 
-        fetch('http://localhost:3001/inventory/update', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/inventory/update', requestOptions)
             .then(res => res.json())
             .then(window.location.reload('false'));             //Reload the page with the updated inventory
     }
@@ -149,7 +149,7 @@ function Inventory() {
     // DELETING AN INVENTORY ITEM
     const handleDeleteClick = (inventory_id) => {
         //DELETE request using fetch with error handling
-        fetch(`http://localhost:3001/inventory/${inventory_id}`, { method: 'DELETE' })
+        fetch(`https://node-deployment-jaq0.onrender.com/inventory/${inventory_id}`, { method: 'DELETE' })
             .then(window.location.reload(false))
             .catch(error => {
                 console.error('There was an error!', error);
@@ -165,7 +165,7 @@ function Inventory() {
 
     // VIEWING ALL INVENTORY
     const fetchInventory = () => {
-        fetch('http://localhost:3001/Inventory')
+        fetch('https://node-deployment-jaq0.onrender.com/Inventory')
         .then(res => res.json())
         .then(json => setInventoryData(json))
     }
