@@ -1,8 +1,8 @@
-.btnEmployeeReport {
+.btnExcessReport {
     background-color: #af1212; /* Green */
     border-radius: 10px;
     font-family: Verdana, sans-serif;
-    font-size: 45px;
+    font-size: 50px;
     border: none;
     color: white;
     width: 450px;
@@ -11,7 +11,7 @@
     bottom:50px;
 }
 
-.backEmployeeButton {
+.backExcessButton {
     border: none;
     border-radius: 10px;
     background-color: #af1212;
