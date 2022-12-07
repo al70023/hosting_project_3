@@ -24,19 +24,6 @@ const Option = (props) => {
 
 function MenuItems() {
 
-    var colourOptions = [
-        { value: "ocean1", label: "Ocean" },
-        { value: "blue", label: "Blue" },
-        { value: "purple", label: "Purple" },
-        { value: "red", label: "Red" },
-        { value: "orange", label: "Orange" },
-        { value: "yellow", label: "Yellow" },
-        { value: "green", label: "Green" },
-        { value: "forest", label: "Forest" },
-        { value: "slate", label: "Slate" },
-        { value: "silver", label: "Silver" }
-      ];
-
     // Data state variable defaulted to an empty array (for printing out the data)
     const [menuItemsData, setMenuItemsData] = useState([]);
 
@@ -226,9 +213,7 @@ function MenuItems() {
             
             <div>
             <Link activeClassName="active" to={'/ManagerHome'}>
-            <a>
-                <button className = "backMenuItemsButton"> Back</button>
-            </a>
+            <button className = "backMenuItemsButton"> Back</button>
             </Link>
             </div>
 
