@@ -7,7 +7,7 @@ function OrderSummary() {
     const [orderSummaryData, setOrderSummaryData] = useState([]);
 
     async function fetchOrderSummary() {
-        const response = await fetch('https://frontend-q5zw.onrender.com/orderSummary/');
+        const response = await fetch('https://node-deployment-jaq0.onrender.com/orderSummary/');
         const data = await response.json();
         setOrderSummaryData(data);
     }
