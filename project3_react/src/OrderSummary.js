@@ -7,7 +7,7 @@ function OrderSummary() {
     const [orderSummaryData, setOrderSummaryData] = useState([]);
 
     const fetchOrderSummary = () => {
-        fetch('http://localhost:3001/OrderSummary')
+        fetch('https://node-deployment-jaq0.onrender.com/OrderSummary')
         .then(res => res.json())
         .then(json => setOrderSummaryData(json))
     }
