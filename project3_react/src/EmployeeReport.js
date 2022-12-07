@@ -8,7 +8,7 @@ function EmployeeReport() {
     const [EmployeeItemsData, setEmployeeItemsData] = useState([]);
 
     const fetchEmployeeItems = () => {
-        fetch('http://localhost:3001/EmployeeReport')
+        fetch('https://node-deployment-jaq0.onrender.com/EmployeeReport')
             .then(res => res.json())
             .then(json => setEmployeeItemsData(json))
     }
