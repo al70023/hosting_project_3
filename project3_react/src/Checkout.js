@@ -101,11 +101,14 @@ function Checkout() {
         
         console.log(newOrder);
 
-        // Add the new menu item into the table
-        fetch('https://node-deployment-jaq0.onrender.com/orderSummary/insert', requestOptions)
-            .then(res => res.json())
-            .then(console.log(res))
-            .then(window.location.replace('/OrderSummary'));
+        async function fetchOrderSummary(requestOptions) {
+             const response = await fetch('https://node-deployment-jaq0.onrender.com/orderSummary/insert', requestOptions)
+             const data = await response.json();
+//             .then(res => res.json())
+//             .then(console.log(res))
+        }
+        fetchOrderSummary(requestOptions);
+        window.location.replace('/OrderSummary');
     }
 
     function removeItem(dessertItem) {
