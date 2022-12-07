@@ -45,7 +45,7 @@ function SalesReport() {
         }
 
         // Add the new inventory into the table
-        fetch('http://localhost:3001/SalesReport', requestOptions)
+        fetch('https://node-deployment-jaq0.onrender.com/SalesReport', requestOptions)
             .then(res => res.json())
             //.then(window.location.reload('false'))
             .then(json => setSalesItemsData(json));             
@@ -56,7 +56,7 @@ function SalesReport() {
 
 
     const fetchSalesItems = () => {
-        fetch('http://localhost:3001/SalesReport')
+        fetch('https://node-deployment-jaq0.onrender.com/SalesReport')
             .then(res => res.json())
             .then(json => setSalesItemsData(json))
     }
